@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Exclusão de cadastro</title>
+</h:head>
+
+<h:body>
+<f:view contentType="text/html">
+
+<div id="corpo">
+
+
+
+<h:form id = "formExcluirCadastro" styleClass="semBorda">
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Bem Vindo ao Sistema de Gestão Acadêmica da Etec-ZL">
+ 
+
+
+
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+		
+<p align="Right">
+<h:commandLink action="./indexDirecao.jsf">  Voltar </h:commandLink>  
+</p>
+
+
+<p:panelGrid id="gridNovoCadastro" columns = "2">
+<h:outputText value="Identificação"
+style="color:blue; background-color:80BFFF" />
+<p:inputText value="${acessoMB.excluirDados.identificacao}"
+id="txtIdentificacao" maxlength="50">
+</p:inputText>
+
+<h:outputText value = "Nome" />
+<p:inputText id="txtNome" maxlength="100" size="100"
+value="${acessoMB.excluirDados.nome}"/>
+  
+
+
+
+<h:outputText value = "RG" />
+<p:inputMask id="txtRG"  
+value="${acessoMB.excluirDados.rg}"
+mask="99.999.999-*" size = "15"/>
+
+<h:outputText value = "Email:" />
+<p:inputText id="txtEmaiL" maxlength="100" size="100"
+value="${acessoMB.excluirDados.email}" />
+
+<h:outputText value = "Tipo de acesso:" />
+<p:selectOneMenu id="txtTipoAcesso" value="${acessoMB.excluirDados.tipoAcesso}">
+<f:selectItem itemValue="" itemLabel=""/>  
+<f:selectItem itemValue="Aluno" itemLabel="Aluno"/>  
+ <f:selectItem itemValue="Professor" itemLabel="Professor"/>  
+ <f:selectItem itemValue="Secretaria" itemLabel="Secretária"/>  
+ <f:selectItem itemValue="Coordenador" itemLabel="Coordenador"/>  
+</p:selectOneMenu>  
+
+</p:panelGrid>
+
+
+
+ <br> </br>
+
+
+<center> 
+<h:panelGroup> 
+<p:commandButton value="Excluir" ajax="false"
+style="color:black; background-color:orange" size="100"
+name="cmd" action="${acessoMB.excluirAcesso()}" />
+</h:panelGroup>
+</center>
+
+
+</p:tab>
+</p:tabView>
+</h:form>
+</div>
+</f:view>
+</h:body>
+
+
+
+</html>

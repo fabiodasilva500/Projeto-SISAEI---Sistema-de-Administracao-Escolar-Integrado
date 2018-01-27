@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+
+
+
+	<h:outputStylesheet name="estilo.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Bem vindo ao Sistema de Gestão Educacional</title>
+	
+</h:head>
+
+
+<h:body>
+
+	<div id="corpo">
+		<div id="topo">
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+	</div>
+
+
+		<h:form id="indexSecretaria">
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+					<li><a href="index.jsf">Home</a></li>
+					<li><a href="aluno.jsf">Aluno</a></li>
+					<li><a href="turma.jsf">Turma</a></li>
+					<li><a href="professor.jsf">Professor</a> </li>
+					<li><a href="boletim.jsf">Boletim</a></li>
+					<li><a href="matricula.jsf">Matrículas</a></li>
+					<li><a href="trancamento.jsf">Trancamento</a></li>
+					<li><a href="escolheDeclaracao.jsf">Declarações</a></li>
+					<li> <h:commandLink action="#{ajudaMB.manualDoUsuario('secretaria')}"> Ajuda </h:commandLink>  </li>
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+				</ul>
+			</div>
+		</div>
+</h:form>
+		
+		<div id="fieldSet">
+		
+		<p align="Center">
+<font size="3">
+<a href="videoInstitucional.jsf">Sobre o Sistema Etec</a>
+</font> 
+</p>
+		
+		
+
+			<p:fieldset legend="ETEC Zona Leste">
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:graphicImage value="/resources/imagens/etec.jpg" />
+					<h:outputText
+						value="A Escola Técnica da Zona Leste - ETEC-ZL, 
+            é uma instituição pública de ensino Médio e Técnico, 
+            localizada na cidade de São Paulo, no bairro Cidade 
+            Antônio Estevão de Carvalho (Cidade A.E. Carvalho 
+            - Distrito de Ponte Rasa). Mantida pelo Centro 
+            Estadual de Educação Tecnológica Paula Souza (CEETEPS),
+             vinculado a Secretaria do Desenvolvimento do Governo do Estado de São Paulo.
+
+		ETEC-ZL formava, juntamente com a FATEC da Zona leste, 
+		o Centro Tecnológico da Zona Leste - CTZL, 
+		criado em fevereiro de 2002 e extinto em agosto de 2009, 
+		passando, a partir desta data, as duas unidades a existirem separadamente uma da outra." />
+
+
+
+				</h:panelGrid>
+			</p:fieldset>
+
+
+			<p:fieldset legend="O que Fazemos">
+				<h:panelGrid columns="2" cellpadding="10">
+					<p:graphicImage value="/resources/imagens/etec2.jpg" />
+
+					<h:outputText
+						value="O terreno onde foi instalado o CTZL 
+(hoje ETEC e FATEC Zona Leste) estava destinado a receber 
+uma penitenciária, mas protestos dos moradores da região 
+impediram que isso fosse feito, e no terreno que abrigaria 
+uma penitenciária foi instalado a primeira instituição 
+pública de ensino superior da Zona Leste (FATEC Zona Leste) 
+e a primeira Escola Técnica.
+      
+     ETEC Zona Leste são ministrados cursos 
+Técnicos de tecnologia devidamente reconhecidos, sendo eles Informática, 
+Logística, Contabilidade, Administração nos períodos da manhã 
+(a partir das 07:30 horas), tarde Ensino Médio (a partir das 13:00 horas) 
+e noite Administração, Técnico e Jurídico, Contabilidade." />
+				</h:panelGrid>
+			</p:fieldset>
+
+
+
+
+		</div>
+		<div id="telas">
+
+			<object type="application/x-shockwave-flash" data="/TCCAtualizado/resources/imagens/galeria.swf"
+				width="700px" height="540px">
+				<param name="allowScriptAccess" value="sameDomain" />
+				<param name="movie" value="galeria.swf" />
+				<param name="wmode" value="transparent" />
+			</object>
+
+
+		</div>
+
+
+
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastro de novo usuário</title>
+</h:head>
+
+<h:body>
+<f:view contentType="text/html">
+
+<div id="corpo">
+
+
+<h:form id="formQuestionario">
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Bem Vindo ao Sistema de Gestão Acadêmica da Etec-ZL">
+ 
+
+
+
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+<p align="Right">
+<h:commandLink action="./indexAluno.jsf">  Voltar </h:commandLink>  
+</p>
+
+
+	<p:panel header="1-A escola possuí instalações adequadas a execução das atividades de seu curso?" style="margin-bottom:10px;">
+			<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Sim" itemLabel="Sim"/>
+		   <f:selectItem itemValue="Não" itemLabel="Não"/>
+		<p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('1-A escola possuí instalações adequadas a execução das atividades de seu curso?')}" />  
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+	
+			<p:panel header="2-Todos os professores apresentam a ementa das disciplinas na 1ª aula?" style="margin-bottom:10px;">			
+				<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Sim" itemLabel="Sim"/>
+		   <f:selectItem itemValue="Não" itemLabel="Não"/>
+		 <p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('2-Todos os professores apresentam a ementa das disciplinas na 1ª aula?')}" />  
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+			
+			
+			<p:panel header="3-Todos os professores apresentam o esquema de avaliação na 1ª aula?" style="margin-bottom:10px;">			
+
+			<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Sim" itemLabel="Sim"/>
+		   <f:selectItem itemValue="Não" itemLabel="Não"/>
+		    <p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('3-Todos os professores apresentam o esquema de avaliação na 1ª aula?')}" />  
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+			
+			
+		
+	
+		 <p:panel header="4-Os professores oferecem meios de recuperação de aprendizagem para estudantes que não estejam rendendo?" style="margin-bottom:10px;">		
+			<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Sim, todos oferecem" itemLabel="Sim, todos oferecem"/>
+		    <f:selectItem itemValue="Sim, a maioria oferece" itemLabel="Sim, a maioria oferece"/>
+		    <f:selectItem itemValue="Sim; porém poucos professores oferecem" itemLabel="Sim; porém poucos professores oferecem"/>
+		   <f:selectItem itemValue="Não, nenhum professor oferece" itemLabel="Não, nenhum professor oferece"/>
+		   <p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('4-Os professores oferecem meios de recuperação de aprendizagem para estudantes que não estejam rendendo?')}" />  
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+			
+			
+				
+		 <p:panel header="5-Como é o relacionamento entre os estudantes em sua sala de aula?" style="margin-bottom:10px;">			
+			<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Muito Bom" itemLabel="Muito bom"/>
+		   <f:selectItem itemValue="Bom" itemLabel="Bom"/>
+		   <f:selectItem itemValue="Regular" itemLabel="Regular"/>
+		   <f:selectItem itemValue="Ruim" itemLabel="Ruim"/>
+		   <f:selectItem itemValue="Péssimo" itemLabel="Péssimo"/>
+		 <p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('5-Como é o relacionamento entre os estudantes em sua sala de aula?')}" />   
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+			
+			
+
+		   <p:panel header="6-Há cooperação entre os estudantes de modo que o processo ensino aprendizagem ocorra adequadamente?" style="margin-bottom:10px;">
+	
+			<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Sim" itemLabel="Sim"/>
+		   <f:selectItem itemValue="Não" itemLabel="Não"/>
+		  <p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('6-Há cooperação entre os estudantes de modo que o processo ensino aprendizagem ocorra adequadamente?')}" />   
+		  </h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+			
+			<p:panel header="7-Para você os equipamentos contidos na Etec são de qualidade?" style="margin-bottom:10px;">
+			<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Sim, todos" itemLabel="Sim, todos"/>
+		   	<f:selectItem itemValue="Sim, boa parte são de qualidade" itemLabel="Sim, boa parte são de qualidade"/>
+		    <f:selectItem itemValue="Sim, porém poucos são de qualidade" itemLabel="Sim; porém poucos são de qualidade"/>
+		   <f:selectItem itemValue="Não, os equipamentos são de baixa qualidade" itemLabel="Não, os equipamentos são de baixa qualidade"/>
+		   <p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('7-Para você os equipamentos contidos na Etec são de qualidade?')}" />   
+		   
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+				
+						
+		  <p:panel header="8-Qual dos motivos abaixo acarreta mais na sua ausência em dias letivos?" style="margin-bottom:10px;">
+			<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Não gosto da disciplina" itemLabel="Não gosto da disciplina"/>
+		   <f:selectItem itemValue="Não gosto do professor da matéria" itemLabel="Não gosto do professor da matéria"/>
+		   <f:selectItem itemValue="Não gosto do professor e da disciplina" itemLabel="Não gosto do professor e da disciplina"/>
+		   <f:selectItem itemValue="Julgo a disciplina pouco importante para a minha formação" itemLabel="Julgo a disciplina pouco importante para a minha formação"/>
+		   <f:selectItem itemValue="Trabalho e não tenho tempo para comparecer" itemLabel="Trabalho e não tenho tempo para comparecer"/>
+		   <f:selectItem itemValue="Problemas pessoais" itemLabel="Problemas pessoais"/>
+		<p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('8-Qual dos motivos abaixo acarreta mais na sua ausência em dias letivos?')}" />   
+		
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+			
+		
+			   <p:panel header="9-Qual disciplina no semestre atual você está tendo maior dificuldade?" style="margin-bottom:10px;">
+	
+				
+				<p:panelGrid columns="2">
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+						<f:selectItems value="#{questionarioMB.listaDisciplinas(acessoMB.acessoAtual.identificacao)}" var="disciplinas"
+							itemLabel="#{disciplinas}" itemValue="#{disciplinas}" />
+			<p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('9-Qual disciplina no semestre atual você está tendo maior dificuldade?')}" />   
+							
+           </h:selectOneRadio>
+
+ 			
+				</p:panelGrid>
+			</p:panel>
+		
+	
+			
+			<p:panel header="10-Você está satisfeito com o seu curso?" style="margin-bottom:10px;" color = "blue">		
+				
+				<p:panelGrid columns="2">
+
+
+
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+            <f:selectItem itemValue="Plenamente Satisfeito" itemLabel="Plenamento Satisfeito"/>
+		   <f:selectItem itemValue="Satisfeito" itemLabel="Satisfeito"/>
+		   <f:selectItem itemValue="Razoavelmente Satisfeito" itemLabel="Razoavelmente satisfeito"/>
+		   <f:selectItem itemValue="Insatisfeito" itemLabel="Insatisfeito"/>
+		   <f:selectItem itemValue="Plenamente Insatisfeito" itemLabel="Plenamente Insatisfeito"/>
+ <p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('10-Você está satisfeito com o seu curso?')}" />   
+
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+			
+			
+				<p:panel header="11-Você acha que há necessidade de grandes mudanças na forma com que o curso é oferecido pela instituição ?" style="margin-bottom:10px;">				
+				<p:panelGrid columns="2">
+
+
+           <h:selectOneRadio value="${questionarioMB.resposta}">
+		   <f:selectItem itemValue="Sim" itemLabel="Sim"/>
+		   <f:selectItem itemValue="Não" itemLabel="Não"/>
+ <p:ajax update="" event="valueChange" listener="${questionarioMB.inicializaQuestoes('11-Você acha que há necessidade de grandes mudanças na forma com que o curso é oferecido pela instituição?')}" />   
+		   
+			</h:selectOneRadio>
+				</p:panelGrid>
+			</p:panel>
+			
+
+			
+<center> 
+
+ <p:commandButton value="Enviar respostas" ajax="false"
+style="color:black; background-color:orange" size="100"
+name="cmd" action="${questionarioMB.inserir(acessoMB.acessoAtual.identificacao)}" />
+   </center>
+</p:tab>
+</p:tabView>
+
+</h:form>
+
+	</div>
+</f:view>
+</h:body>
+</html>

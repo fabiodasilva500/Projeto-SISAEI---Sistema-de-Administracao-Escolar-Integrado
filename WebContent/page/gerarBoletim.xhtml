@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Gerar Boletim</title>
+</h:head>
+
+<h:body>
+<f:view contentType="text/html">
+
+		<div id="corpo">
+
+
+
+<h:form id="formGerarBoletim">
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Bem Vindo ao Sistema de Gestão Acadêmica da Etec-ZL">
+ 
+
+
+
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+ 
+<p align="Right">
+<h:commandLink action="#{boletimMB.verificaTipoAcesso()}"> Voltar </h:commandLink> 
+</p>
+
+
+		
+
+			<p:panel header="Dados do Boletim" style="margin-bottom:10px;">
+				<p:panelGrid columns="4">
+
+		    <h:outputText value="RM" />
+		    <p:inputText id="txtRM" maxlength="8" size="12"
+		    update="txtNome"
+		    action = "${boletimMB.localizaNomeAluno()}"
+		    value="${boletimMB.boletimAtual.identificacaoAluno}" disabled = "true"/>
+		    
+ <h:outputLabel value="Nome do estudante " />
+<p:selectOneMenu id = "txtIdentificacao" value="#{boletimMB.boletimAtual.identificacaoAluno}" 
+style="width:600px;">
+<f:selectItem itemLabel="" size="100" itemValue="" />
+<f:selectItems value="#{boletimMB.localizaAlunosBoletim()}" var="aluno"
+itemLabel="#{aluno.nome}" itemValue="#{aluno.identificacao}"/>
+	<p:ajax update="txtRM" event="valueChange"
+							listener="${boletimMB.listaAnos()}" />
+</p:selectOneMenu>
+
+				
+
+		  </p:panelGrid>
+		 	
+		 
+		<p:panelGrid columns="3">
+
+          <h:panelGroup> 
+          
+       
+			
+		<p:commandButton value="Gerar Boletim" ajax="false"
+		style="color:blue; background-color:#CCEEFF" size="100"
+		name="cmd" action="${boletimMB.gerarBoletim()}" />
+		
+		<p:commandButton value="Acompanhamento geral do semestre" ajax="false"
+		style="color:blue; background-color:#CCEEFF" size="100"
+		name="cmd" action="${boletimMB.gerarAcompanhamento()}" />
+       
+ 
+		
+	  </h:panelGroup>
+	  </p:panelGrid>
+		 </p:panel>
+		 
+
+</p:tab>
+</p:tabView>
+	</h:form>
+	</div>
+</f:view>
+</h:body>
+</html>

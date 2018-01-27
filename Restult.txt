@@ -1,0 +1,565 @@
+
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata\WebContent
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata\WebContent\WEB-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.settings
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\CorreioEletronico
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Dao
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Filtro
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\ManagedBeans
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Pojo
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\CorreioEletronico
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\CorreioEletronico\EnvioDeEmail.java = 163 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AcessoDao.java = 27 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AcessoDaoImplementation.java = 356 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoDaoImplementation.java = 329 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoTurmaDao.java = 17 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoTurmaDaoImplementation.java = 491 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AreaConcentracaoDao.java = 14 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AreaConcentracaoDaoImplementation.java = 115 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BackupRestoreDao.java = 7 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BackupRestoreDaoImplementation.java = 89 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BD.java = 90 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BoletimDao.java = 38 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BoletimDaoImplementation.java = 1276 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CoordenadorDao.java = 17 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CoordenadorDaoImplementation.java = 212 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CursoDao.java = 18 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CursoDaoImplementation.java = 194 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DeclaracaoDao.java = 22 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DeclaracaoDaoImplementation.java = 107 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DependenciaDao.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DependenciaDaoImplementation.java = 292 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiarioDao.java = 39 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiarioDaoImplementation.java = 544 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiretoriaDao.java = 14 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiretoriaDaoImplementation.java = 211 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DisciplinaDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DisciplinaDaoImplementation.java = 298 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EmailDao.java = 8 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EmailDaoImplementation.java = 63 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EstatisticaDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EstatisticaDaoImplementation.java = 672 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\GraficoInstituicaoDao.java = 20 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\GraficoInstituicaoDaoImplementation.java = 475 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\JDBCUtil.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDao.java = 26 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDaoImplementation.java = 427 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDisciplinaTurmaDao.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDisciplinaTurmaDaoImplementation.java = 224 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\QuestionarioDao.java = 9 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\QuestionarioDaoImplementation.java = 74 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\SecretariaDao.java = 18 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\SecretariaDaoImplementation.java = 211 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\TurmaDao.java = 27 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\TurmaDaoImplementation.java = 451 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Filtro
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Filtro\JSFFiltro.java = 230 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AcessoMB.java = 937 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AjudaMB.java = 133 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AlunoMB.java = 309 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AreaConcentracaoMB.java = 132 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BackupRestoreMB.java = 195 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimAlunoMB.java = 180 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimMB.java = 1071 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimProfessorMB.java = 1055 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ContaLinhas.java = 234 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ContatoProfessorMB.java = 1377 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ControleDeclaracaoMB.java = 35 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\CoordenadorMB.java = 199 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\CursoMB.java = 139 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DeclaracaoMB.java = 247 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DependenciaMB.java = 570 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiarioMB.java = 583 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiarioProfessorMB.java = 921 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiretoriaMB.java = 177 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DisciplinaMB.java = 184 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DuvidaMB.java = 675 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\EmailMB.java = 158 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\EstatisticaMB.java = 1082 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\GraficoInstituicaoMB.java = 921 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\HistoricoMB.java = 273 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\MatriculaMB.java = 336 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\MenuMB.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ProfessorDisciplinaTurmaMB.java = 424 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ProfessorMB.java = 205 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\QuestionarioMB.java = 187 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\SecretariaMB.java = 177 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\TurmaMB.java = 226 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\UploadBean.java = 200 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Acesso.java = 94 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Aluno.java = 184 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\AreaConcentracao.java = 33 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Boletim.java = 146 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Coordenador.java = 126 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Curso.java = 68 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Dependencia.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Diario.java = 81 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Diretoria.java = 118 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Disciplina.java = 86 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Email.java = 73 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Estatistica.java = 33 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Filme.java = 50 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Matricula.java = 62 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\PortalAluno.java = 44 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Professor.java = 136 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\ProfessorDisciplinaTurma.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Questionario.java = 44 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Secretaria.java = 118 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Turma.java = 119 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\TurmaCurso.java = 64 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\META-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\css
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\imagens
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\js
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\BackupRestore
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\EnviaAnexo
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\ManuaisDoUsuario
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\Relatorio
+
+
+
+=============================================
+Sub-pastas do projeto = 30 pastas
+Classes do projeto = 99 classes
+Linhas de codigo do projeto = 23385 linhas
+
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata\WebContent
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata\WebContent\WEB-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.settings
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\CorreioEletronico
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Dao
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Filtro
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\ManagedBeans
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Pojo
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\CorreioEletronico
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\CorreioEletronico\EnvioDeEmail.java = 163 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AcessoDao.java = 27 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AcessoDaoImplementation.java = 356 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoDaoImplementation.java = 329 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoTurmaDao.java = 17 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoTurmaDaoImplementation.java = 491 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AreaConcentracaoDao.java = 14 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AreaConcentracaoDaoImplementation.java = 115 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BackupRestoreDao.java = 7 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BackupRestoreDaoImplementation.java = 89 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BD.java = 90 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BoletimDao.java = 38 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BoletimDaoImplementation.java = 1276 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CoordenadorDao.java = 17 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CoordenadorDaoImplementation.java = 212 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CursoDao.java = 18 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CursoDaoImplementation.java = 194 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DeclaracaoDao.java = 22 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DeclaracaoDaoImplementation.java = 107 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DependenciaDao.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DependenciaDaoImplementation.java = 292 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiarioDao.java = 39 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiarioDaoImplementation.java = 544 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiretoriaDao.java = 14 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiretoriaDaoImplementation.java = 211 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DisciplinaDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DisciplinaDaoImplementation.java = 298 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EmailDao.java = 8 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EmailDaoImplementation.java = 63 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EstatisticaDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EstatisticaDaoImplementation.java = 672 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\GraficoInstituicaoDao.java = 20 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\GraficoInstituicaoDaoImplementation.java = 475 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\JDBCUtil.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDao.java = 26 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDaoImplementation.java = 427 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDisciplinaTurmaDao.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDisciplinaTurmaDaoImplementation.java = 224 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\QuestionarioDao.java = 9 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\QuestionarioDaoImplementation.java = 74 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\SecretariaDao.java = 18 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\SecretariaDaoImplementation.java = 211 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\TurmaDao.java = 27 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\TurmaDaoImplementation.java = 451 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Filtro
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Filtro\JSFFiltro.java = 230 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AcessoMB.java = 937 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AjudaMB.java = 133 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AlunoMB.java = 309 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AreaConcentracaoMB.java = 132 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BackupRestoreMB.java = 195 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimAlunoMB.java = 180 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimMB.java = 1071 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimProfessorMB.java = 1055 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ContaLinhas.java = 235 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ContatoProfessorMB.java = 1377 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ControleDeclaracaoMB.java = 35 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\CoordenadorMB.java = 199 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\CursoMB.java = 139 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DeclaracaoMB.java = 247 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DependenciaMB.java = 570 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiarioMB.java = 583 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiarioProfessorMB.java = 921 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiretoriaMB.java = 177 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DisciplinaMB.java = 184 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DuvidaMB.java = 675 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\EmailMB.java = 158 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\EstatisticaMB.java = 1082 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\GraficoInstituicaoMB.java = 921 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\HistoricoMB.java = 273 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\MatriculaMB.java = 336 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\MenuMB.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ProfessorDisciplinaTurmaMB.java = 424 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ProfessorMB.java = 205 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\QuestionarioMB.java = 187 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\SecretariaMB.java = 177 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\TurmaMB.java = 226 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\UploadBean.java = 200 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Acesso.java = 94 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Aluno.java = 184 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\AreaConcentracao.java = 33 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Boletim.java = 146 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Coordenador.java = 126 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Curso.java = 68 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Dependencia.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Diario.java = 81 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Diretoria.java = 118 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Disciplina.java = 86 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Email.java = 73 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Estatistica.java = 33 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Filme.java = 50 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Matricula.java = 62 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\PortalAluno.java = 44 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Professor.java = 136 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\ProfessorDisciplinaTurma.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Questionario.java = 44 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Secretaria.java = 118 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Turma.java = 119 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\TurmaCurso.java = 64 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\META-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\css
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\imagens
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\js
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\BackupRestore
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\EnviaAnexo
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\ManuaisDoUsuario
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\Relatorio
+
+
+
+=============================================
+Sub-pastas do projeto = 30 pastas
+Classes do projeto = 99 classes
+Linhas de codigo do projeto = 23386 linhas
+
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata\WebContent
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.metadata\WebContent\WEB-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\.settings
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\CorreioEletronico
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Dao
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Filtro
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\ManagedBeans
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\build\classes\Pojo
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\CorreioEletronico
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\CorreioEletronico\EnvioDeEmail.java = 163 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AcessoDao.java = 27 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AcessoDaoImplementation.java = 356 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoDaoImplementation.java = 329 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoTurmaDao.java = 17 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AlunoTurmaDaoImplementation.java = 491 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AreaConcentracaoDao.java = 14 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\AreaConcentracaoDaoImplementation.java = 115 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BackupRestoreDao.java = 7 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BackupRestoreDaoImplementation.java = 89 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BD.java = 90 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BoletimDao.java = 38 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\BoletimDaoImplementation.java = 1276 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CoordenadorDao.java = 17 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CoordenadorDaoImplementation.java = 212 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CursoDao.java = 18 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\CursoDaoImplementation.java = 194 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DeclaracaoDao.java = 22 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DeclaracaoDaoImplementation.java = 107 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DependenciaDao.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DependenciaDaoImplementation.java = 292 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiarioDao.java = 39 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiarioDaoImplementation.java = 544 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiretoriaDao.java = 14 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DiretoriaDaoImplementation.java = 211 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DisciplinaDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\DisciplinaDaoImplementation.java = 298 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EmailDao.java = 8 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EmailDaoImplementation.java = 63 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EstatisticaDao.java = 21 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\EstatisticaDaoImplementation.java = 672 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\GraficoInstituicaoDao.java = 20 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\GraficoInstituicaoDaoImplementation.java = 475 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\JDBCUtil.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDao.java = 26 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDaoImplementation.java = 427 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDisciplinaTurmaDao.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\ProfessorDisciplinaTurmaDaoImplementation.java = 224 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\QuestionarioDao.java = 9 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\QuestionarioDaoImplementation.java = 74 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\SecretariaDao.java = 18 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\SecretariaDaoImplementation.java = 211 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\TurmaDao.java = 27 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Dao\TurmaDaoImplementation.java = 451 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Filtro
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Filtro\JSFFiltro.java = 230 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AcessoMB.java = 937 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AjudaMB.java = 133 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AlunoMB.java = 309 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\AreaConcentracaoMB.java = 132 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BackupRestoreMB.java = 195 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimAlunoMB.java = 180 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimMB.java = 1071 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\BoletimProfessorMB.java = 1055 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ContaLinhas.java = 236 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ContatoProfessorMB.java = 1377 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ControleDeclaracaoMB.java = 35 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\CoordenadorMB.java = 199 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\CursoMB.java = 139 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DeclaracaoMB.java = 247 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DependenciaMB.java = 570 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiarioMB.java = 583 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiarioProfessorMB.java = 921 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DiretoriaMB.java = 177 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DisciplinaMB.java = 184 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\DuvidaMB.java = 675 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\EmailMB.java = 158 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\EstatisticaMB.java = 1082 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\GraficoInstituicaoMB.java = 921 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\HistoricoMB.java = 273 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\MatriculaMB.java = 336 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\MenuMB.java = 19 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ProfessorDisciplinaTurmaMB.java = 424 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\ProfessorMB.java = 205 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\QuestionarioMB.java = 187 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\SecretariaMB.java = 177 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\TurmaMB.java = 226 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\ManagedBeans\UploadBean.java = 200 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Acesso.java = 94 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Aluno.java = 184 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\AreaConcentracao.java = 33 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Boletim.java = 146 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Coordenador.java = 126 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Curso.java = 68 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Dependencia.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Diario.java = 81 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Diretoria.java = 118 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Disciplina.java = 86 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Email.java = 73 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Estatistica.java = 33 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Filme.java = 50 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Matricula.java = 62 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\PortalAluno.java = 44 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Professor.java = 136 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\ProfessorDisciplinaTurma.java = 43 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Questionario.java = 44 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Secretaria.java = 118 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\Turma.java = 119 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\src\Pojo\TurmaCurso.java = 64 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\META-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\acesso.xhtml = 109 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\acessoBoletimAluno.xhtml = 69 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\alterarEmailSenha.xhtml = 108 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\aluno.xhtml = 228 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\areaConcentracao.xhtml = 128 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\atualizaDependencia.xhtml = 118 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\atualizaDependenciaQuitada.xhtml = 120 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\backupRestore.xhtml = 119 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\boletim.xhtml = 174 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\boletimDirecao.xhtml = 177 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\boletimProfessor.xhtml = 167 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\contatoProfessor.xhtml = 205 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\coordenador.xhtml = 172 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\curso.xhtml = 160 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\declaracaoAluno.xhtml = 127 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\dependencia.xhtml = 135 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\Diario.xhtml = 178 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\diarioProfessor.xhtml = 224 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\diretoria.xhtml = 162 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\disciplina.xhtml = 175 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\duvidaAluno.xhtml = 187 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\escolheDeclaracao.xhtml = 74 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\escolheEstatistica.xhtml = 77 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\escolheEstatisticaArea.xhtml = 76 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\estatisticaAluno.xhtml = 143 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\estatisticaAreaConcentracao.xhtml = 143 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\estatisticaComparacaoTurmas.xhtml = 137 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\estatisticaDisciplina.xhtml = 147 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\estatisticaInstituicao.xhtml = 137 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\estatisticaTurma.xhtml = 129 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\excluiCadastroAcesso.xhtml = 100 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\gerarBoletim.xhtml = 96 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\graficoAreaConcentracao.xhtml = 65 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\graficoComparativoAluno.xhtml = 69 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\graficoComparativoTurma.xhtml = 70 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\graficoDiario.xhtml = 74 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\graficoDisciplinaTurma.xhtml = 78 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\graficoInstituicao.xhtml = 130 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\historicoAluno.xhtml = 133 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\index.xhtml = 123 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\indexAluno.xhtml = 121 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\indexCoordenador.xhtml = 119 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\indexDirecao.xhtml = 126 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\indexProfessor.xhtml = 124 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\insereBoletimDirecao.xhtml = 144 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\insereBoletimProfessor.xhtml = 143 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\invalidaAcesso.xhtml = 86 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\invalidaSessao.xhtml = 86 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\listaAreas.xhtml = 67 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\listaProfessores.xhtml = 75 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\matricula.xhtml = 185 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\modificarBoletimDirecao.xhtml = 152 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\modificarBoletimProfessor.xhtml = 146 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\novoCadastroAcesso.xhtml = 103 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\primeiroAcesso.xhtml = 79 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\professor.xhtml = 194 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\professorTurma.xhtml = 169 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\questionario.xhtml = 222 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\recuperaSenha.xhtml = 80 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\secretaria.xhtml = 162 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\selecaoDirecao.xhtml = 67 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\turma.xhtml = 195 linhas
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\page\videoInstitucional.xhtml = 62 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\css
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\imagens
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\resources\js
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib
+	 C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\listaProfessores.xhtml = 70 linhas
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\BackupRestore
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\EnviaAnexo
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\ManuaisDoUsuario
+
+Path = C:\Users\FSilva\Desktop\TCCAtualizado\WebContent\WEB-INF\lib\Relatorio
+
+
+
+=============================================
+Sub-pastas do projeto = 30 pastas
+Classes do projeto = 163 classes
+Linhas de codigo do projeto = 31607 linhas

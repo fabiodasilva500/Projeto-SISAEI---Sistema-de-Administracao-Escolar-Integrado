@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Entre em contato com os seus alunos</title>
+</h:head>
+
+<h:body>
+<f:view contentType="text/html">
+
+<div id="corpo">
+
+
+<h:form id="formContatoProfessor">
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Bem Vindo ao Sistema de Gestão Acadêmica da Etec-ZL">
+ 
+
+
+	<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 89px;"/>
+
+		</div>
+
+<p align="Right">
+<h:commandLink action="./indexProfessor.jsf">  Voltar </h:commandLink>  
+</p>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+						
+			<p:panel header="Entre em contato com os seus alunos" style="margin-bottom:10px;">
+		   <p:panelGrid styleClass="semBorda" columns="2">  
+
+
+					
+			     	<h:outputText value="Semestre" />
+					<p:selectOneMenu id="txtSemestre"
+						value="${contatoProfessorMB.selecaoSemestre}">
+						<f:selectItem itemValue="0" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<p:ajax update="txtModulo txtCurso txtTurma txtDisciplina txtAluno  txtAssunto txtConteudo" event="valueChange"
+							listener="${contatoProfessorMB.listaAnos()}" />
+					</p:selectOneMenu>
+
+					<h:outputLabel value="Curso " />
+					<p:selectOneMenu id="txtCurso" value="#{contatoProfessorMB.selecaoCurso}"
+						style="width:600px;" disabled="#{contatoProfessorMB.desabilitaCurso}">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{contatoProfessorMB.listaCursos(acessoMB.acessoAtual)}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+						<p:ajax update="txtModulo txtCurso txtTurma txtDisciplina txtAluno txtAssunto txtConteudo" event="valueChange"
+							listener="${contatoProfessorMB.listaCursos(acessoMB.acessoAtual)}" />
+					</p:selectOneMenu>
+					
+					<h:outputText value="Modulo" />
+					<p:selectOneMenu id="txtModulo" value="${contatoProfessorMB.selecaoModulo}"
+						style="width:50px;" disabled="#{contatoProfessorMB.desabilitaModulo}">
+						<f:selectItem itemValue="0" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<f:selectItem itemValue="3" itemLabel="3º" />
+						<p:ajax update="txtTurma txtDisciplina txtAluno txtAssunto txtConteudo" event="valueChange"
+							listener="${contatoProfessorMB.listaTurmaModulo()}" />
+					</p:selectOneMenu>
+						
+					<h:outputLabel for="Turma" value="Turma" />
+					<p:selectOneMenu id="txtTurma" value="#{contatoProfessorMB.selecaoTurma}"
+						style="width:600px;"   disabled="#{contatoProfessorMB.desabilitaTurma}">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{contatoProfessorMB.listaTurmas}" var="turma"
+							itemLabel="#{turma.nome}" itemValue="#{turma.IDTurma}"/>
+						   <p:ajax update="txtTurma txtDisciplina txtAluno txtAssunto txtConteudo" event="valueChange"
+							listener="${contatoProfessorMB.listaTurmaCurso()}" />
+							
+					</p:selectOneMenu>
+
+						
+						<h:outputLabel for="Disciplina" value="Disciplina" />
+						
+					<p:selectOneMenu id="txtDisciplina"
+						value="#{contatoProfessorMB.selecaoDisciplina}" 
+						style="width:600px;"  disabled="#{contatoProfessorMB.desabilitaDisciplina}">
+						
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{contatoProfessorMB.listaDisciplina}"
+							var="disciplina" itemLabel="#{disciplina.nome}"
+							itemValue="#{disciplina.IDDisciplina}" />
+							  <p:ajax update="txtDisciplina txtAluno txtAssunto txtConteudo" event="valueChange"
+							listener="${contatoProfessorMB.listaDisciplinas()}" />
+						
+					</p:selectOneMenu>
+		
+			<h:outputText value="Assunto " />
+						<p:inputText id="txtAssunto" maxlength="100" size="100"
+						value="${contatoProfessorMB.assunto}"
+						disabled="#{contatoProfessorMB.desabilitaAssunto}"> 
+				<p:ajax update="txtAssunto txtConteudo" event="valueChange"
+					listener="${contatoProfessorMB.habilitaEmail()}" />
+		    </p:inputText>
+
+					<h:outputText value="Conteúdo" />
+					<p:inputTextarea rows="6" cols="100" id ="txtConteudo" value="#{contatoProfessorMB.conteudo}" queryDelay="750" minQueryLength="4"
+				    disabled="#{contatoProfessorMB.desabilitaConteudo}">
+				    <p:ajax update="txtConteudo" event="valueChange"
+					listener="${contatoProfessorMB.habilitaEmail()}" />
+				    </p:inputTextarea>
+		
+	</p:panelGrid>
+
+	
+	
+	       <h:panelGrid columns="2">
+           <p:selectOneRadio value="${contatoProfessorMB.habilitaGridAluno}">
+           <f:selectItem itemValue="false" itemLabel="Enviar para todos &#160; &#160; &#160; &#160; &#160;"/> 
+		   <f:selectItem itemValue="true" itemLabel="Selecionar um estudante específico"/>
+		   <p:ajax update="panelHabilitaGridAluno" event="change"/>    
+		   </p:selectOneRadio>			
+		</h:panelGrid>
+			
+			<br> </br>
+			
+			
+	   <h:panelGrid columns="2">
+           <p:selectOneRadio value="${contatoProfessorMB.habilitaGridArquivo}">
+           <f:selectItem itemValue="false" itemLabel="Não anexar arquivo &#160; &#160; &#160; &#160;"/> 
+		   <f:selectItem itemValue="true" itemLabel="Anexar arquivo"/>
+		   <p:ajax update="panelHabilitaGridEmail" event="change"/>    
+		   </p:selectOneRadio>			
+		</h:panelGrid>
+
+			<br> </br>
+
+
+<p:outputPanel id="panelHabilitaGridAluno">
+<p:panel id="panelAluno" rendered="#{contatoProfessorMB.habilitaGridAluno}" styleClass="semBorda">  
+
+ 
+<h:outputText value = "Estudante &#160; &#160; " id="estudante"/>
+
+			          <p:selectOneMenu id="txtAluno"
+						value="#{contatoProfessorMB.selecaoAluno}" 
+						style="width:600px;"  disabled="#{contatoProfessorMB.desabilitaAluno}">
+						
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{contatoProfessorMB.listaAlunos}"
+							var="aluno" itemLabel="#{aluno.nome}"
+							itemValue="#{aluno.email}" />
+							  <p:ajax update="txtAluno" event="valueChange"
+							listener="${contatoProfessorMB.listaAlunos()}" />
+						
+</p:selectOneMenu>
+					
+</p:panel>
+</p:outputPanel>
+
+<br> </br>
+
+
+
+
+<p:outputPanel id="panelHabilitaGridEmail">
+<p:panel id="panelArquivo" rendered="#{contatoProfessorMB.habilitaGridArquivo}" styleClass="semBorda">  
+          <p:fileUpload fileUploadListener="#{contatoProfessorMB.uploadListener}" />
+</p:panel>
+</p:outputPanel>
+
+<br> </br>
+<center> 
+						<h:panelGroup>
+
+							<p:commandButton value="Enviar Email" ajax="false"
+                            style="color:black; background-color:orange" size="100"
+ 								name="cmd" action="${contatoProfessorMB.enviarEmail(acessoMB.acessoAtual)}" />
+						</h:panelGroup>
+						</center>
+						
+
+					</p:panel>
+   
+			</p:tab>
+</p:tabView>
+
+</h:form>
+
+	</div>
+</f:view>
+
+
+</h:body>
+</html>

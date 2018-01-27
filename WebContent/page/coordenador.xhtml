@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Manutenção do Cadastro de Secretárias</title>
+</h:head>
+
+
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+		<h:form id="formCoordenador">
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+		            <li><a href="indexDirecao.jsf">Home</a></li>
+					<li><a href="curso.jsf">Curso</a></li>
+					<li><a href="disciplina.jsf">Disciplina</a></li>
+					<li><a href="secretaria.jsf">Secretaria</a></li>
+					<li><a href="coordenador.jsf">Coordenador</a></li>
+					<li><a href="diretoria.jsf">Diretoria</a></li>
+					<li><a href="boletimDirecao.jsf">Boletim</a></li>
+					<li><a href="novoCadastroAcesso.jsf">Novo usuário</a></li>
+					<li><a href="excluiCadastroAcesso.jsf">Excluir usuário</a></li>
+					<li><a href="backupRestore.jsf">Backup</a></li>				
+					<li> <h:commandLink action="#{ajudaMB.manualDoUsuario('diretor')}"> Ajuda </h:commandLink>  </li>	
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar  </h:commandLink>  </li>
+				
+				    
+					
+			
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+		
+
+			<p:panel header="Coordenadores" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+		            <h:outputText value="CPF" />
+					<p:inputMask id="txtCPF"  
+						value="${coordenadorMB.coordenadorAtual.cpf}" 
+						 mask="999.999.999-99" size = "15"/>
+						
+					<h:outputText value="Nome"/>
+					<p:inputText id="txtNome" maxlength="100" size="100"
+						value="${coordenadorMB.coordenadorAtual.nome}" />
+						
+					<h:outputText value="RG" />
+					<p:inputMask id="txtRG"
+						value="${coordenadorMB.coordenadorAtual.rg}"
+					    mask="99.999.999-*" size = "15"/>
+						 
+
+					<h:outputText value="CEP"/>
+				    <p:inputMask value="${coordenadorMB.coordenadorAtual.cep}" mask="99999-999"  size="11"/>
+
+
+					<h:outputText value="Endereço" />
+					<p:inputText id="txtEndereco" maxlength="100" size="100"
+						value="${coordenadorMB.coordenadorAtual.endereco}" />
+
+					<h:outputText value="Número" />
+					<p:inputText id="txtNumero" maxlength="10" size="10"
+						value="${coordenadorMB.coordenadorAtual.numero}" />
+
+
+					<h:outputText value="Bairro" />
+					<p:inputText id="txtBairro" maxlength="50" size="50"
+						value="${coordenadorMB.coordenadorAtual.bairro}" />
+						
+						
+					<h:outputText value="Estado" />
+					<p:selectOneMenu value="#{coordenadorMB.coordenadorAtual.estado}"
+						style="width:150px;">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{coordenadorMB.listaEstados()}" var="estado"
+							itemLabel="#{estado}" itemValue="#{estado}" />			     
+ 					</p:selectOneMenu>
+ 					
+					<h:outputText value="Cidade" />
+					<p:inputText id="txtCidade" maxlength="50" size="50"
+					value="${coordenadorMB.coordenadorAtual.cidade}" />
+
+			
+					<h:outputText value="Telefone" />
+					<p:inputMask value="${coordenadorMB.coordenadorAtual.telefone}" mask="(99) 9999-9999" size = "12"/>
+
+					<h:outputText value="Celular" />
+				    <p:inputMask value="${coordenadorMB.coordenadorAtual.celular}" mask="(99) 99999-9999" size = "12"/>  
+				
+
+					<h:outputLabel value="Data de Nascimento:" />
+				<p:inputMask id="txtDataNascimento" mask="99/99/9999" maxlength="10" size="10"
+						value="${coordenadorMB.coordenadorAtual.dataNascimento}">
+					<f:convertDateTime pattern="dd/MM/yyyy" dateStyle="short" />
+					</p:inputMask>
+					
+					 <h:outputText value="Nacionalidade" />
+					<p:inputText id="txtNacionalidade" maxlength="50"
+						value="${coordenadorMB.coordenadorAtual.nacionalidade}" />
+
+					<h:outputText value="Naturalidade" />
+					<p:inputText id="txtNaturalidade" maxlength="50" size="50"
+						value="${coordenadorMB.coordenadorAtual.naturalidade}" />
+
+					<h:outputText value="Email" />
+					<p:inputText id="txtEmail" maxlength="100" size="100"
+					value="${coordenadorMB.coordenadorAtual.email}" />
+					
+							
+					<h:outputLabel for="curso" value="Curso " />
+					<p:selectOneMenu value="#{coordenadorMB.coordenadorAtual.curso}"
+						style="width:600px;">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{coordenadorMB.listaCursos()}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+ 					</p:selectOneMenu>
+					
+
+					<div align="center">
+
+							<h:panelGroup>
+
+							<p:commandButton value="Inserir" ajax="false"
+							style="color:blue; background-color:#CCEEFF" size="100"
+							name="cmd" action="${coordenadorMB.inserir()}" />
+			
+							<p:commandButton value="Pesquisar" ajax="false"
+							style="color:blue; background-color:#CCEEFF" size="100"
+							name="cmd" action="${coordenadorMB.pesquisar()}" />
+			
+							
+
+		   <p:commandButton value="Atualizar" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${coordenadorMB.atualizar()}" />
+					<p:commandButton value="Remover" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${coordenadorMB.remover()}" />
+						</h:panelGroup>
+					</div>
+				</p:panelGrid>
+			 </p:panel>
+
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

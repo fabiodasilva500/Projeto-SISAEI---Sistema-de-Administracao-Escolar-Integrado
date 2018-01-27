@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Manutenção do Cadastro de disciplinas</title>
+	<h:outputScript name="calendario.js" library="js" />  
+	
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+			<h:graphicImage value="/resources/imagens/novo_logo.png"
+				style="width: 539px; height: 91px;" />
+				
+<h:form id="formLocalizaVaga">
+				
+
+<p:dataTable id="pesquisaEmpresa" value="#{vagaMB.listaVagas}"  var="empresa" rowKey="#{vagaMB.vagaAtual.IDOportunidade}"
+selection="#{vagaMB.vagaSelecionada}"
+>
+        <f:facet name="header">
+            RadioButton
+        </f:facet>
+        <p:column selectionMode="single" style="width:16px;text-align:center"/>
+        <p:column headerText="Id da Vaga">
+            <h:outputText value="#{empresa.IDOportunidade}" />
+        </p:column>
+        <p:column headerText="ID do Curso">
+            <h:outputText value="#{empresa.curso}" />
+        </p:column>
+        <p:column headerText="Empresa">
+            <h:outputText value="#{empresa.nomeEmpresa}" />
+        </p:column>
+        <p:column headerText="Descrição da Vaga">
+            <h:outputText value="#{empresa.descricao}" />
+        </p:column>
+          <p:column headerText="Requisitos">
+            <h:outputText value="#{empresa.requisitos}" />
+        </p:column> 
+         <p:column headerText="Diferenciais">
+            <h:outputText value="#{empresa.diferenciais}" />
+        </p:column>
+         <p:column headerText="Email">
+            <h:outputText value="#{empresa.email}" />
+        </p:column>
+      <f:facet name="footer">
+	<p:commandButton value="Excluir" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${vagaMB.excluir(vagaMB.vagaAtual.IDOportunidade)}" />        </f:facet>
+       
+          <f:facet name="footer">
+            <p:commandButton process="pesquisaEmpresa" update="" icon="ui-icon-search" value="View" action="${vagaMB.excluir(vagaMB.vagaAtual.IDOportunidade)}" />
+        </f:facet>
+       		
+    </p:dataTable>
+    
+    	
+												
+</h:form>
+		</div>
+
+	
+	</div>
+
+</h:body>
+</html>

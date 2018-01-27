@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Inserção de Estudantes em turmas</title>
+		<h:outputScript name="calendario.js" library="js" />  
+	
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+				style="width: 539px; height: 91px;" />
+
+		</div>
+
+		<h:form id="formAlunoTurmas">
+
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+			   		<li><a href="indexCoordenador.jsf">Home</a></li>
+					<li><a href="Diario.jsf">Diário</a></li>
+				    <li><a href="escolheEstatistica.jsf">Análise do Rendimento Acadêmico</a></li>
+				    <li><a href="estatisticaInstituicao.jsf">Avaliação Institucional</a></li>	
+				    <li><a href="escolheEstatisticaArea.jsf">Análise da Área de Concentração</a></li>	
+				    <li><a href="estatisticaConcluintes.jsf">Evasão Escolar</a></li>	 
+				    <li> <h:commandLink action="#{ajudaMB.manualDoUsuario('coordenador')}"> Ajuda </h:commandLink>  </li> 			    		    
+				    <li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+					
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+			
+
+			<p:panel header="Geração de Lista de Estudantes Ausentes" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+	                 
+
+					<h:outputText value="Semestre" />
+					<p:selectOneMenu id="txtSemestre"
+						value="${diarioMB.selecaoSemestre}">
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<p:ajax update="txtAno txtCurso txtTurma txtModulo txtDataInicial txtDataFinal" event="valueChange"
+							listener="${diarioMB.listaAnos()}" />
+					</p:selectOneMenu>
+
+					<h:outputText value="Ano" />
+					<p:selectOneMenu id="txtAno" value="#{diarioMB.selecaoAno}"
+						style="width:600px;" disabled="#{diarioMB.desabilitaAno}">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{diarioMB.listaAnos()}" var="anos"
+							itemLabel="#{anos}" itemValue="#{anos}" />
+						<p:ajax update="txtAno txtCurso txtTurma txtModulo txtDataInicial txtDataFinal" event="valueChange" />
+					</p:selectOneMenu>
+					
+					
+					<h:outputLabel value="Curso " />
+					<p:selectOneMenu id="txtCurso" value="#{diarioMB.selecaoCurso}"
+						style="width:600px;" disabled="#{diarioMB.desabilitaCurso}">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{diarioMB.listaCursos()}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+						<p:ajax update="txtCurso txtTurma txtModulo txtDataInicial txtDataFinal txtDisciplina" event="valueChange"
+							listener="${diarioMB.listaCursos()}" />
+					</p:selectOneMenu>
+					
+					
+					<h:outputText value="Modulo" />
+					<p:selectOneMenu id="txtModulo" value="${diarioMB.selecaoModulo}" disabled = "${diarioMB.desabilitaModulo}" >
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<f:selectItem itemValue="3" itemLabel="3º" />
+							<p:ajax update="txtCurso txtTurma txtModulo txtDataInicial txtDataFinal txtDisciplina" event="valueChange"
+							listener="${diarioMB.habilitaModulo()}" />
+					</p:selectOneMenu>
+				
+					<h:outputLabel value="Turma " />
+					<p:selectOneMenu id="txtTurma"
+						value="#{diarioMB.diarioAtual.idTurma}"
+						style="width:600px;" disabled="#{diarioMB.desabilitaTurma}">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{diarioMB.listaTurmas()}" var="turma"
+							itemLabel="#{turma.nome}" itemValue="#{turma.IDTurma}" />
+						<p:ajax update="txtTurma txtDataInicial txtDataFinal" event="valueChange"
+							listener="${diarioMB.listaTurmas()}" />
+					</p:selectOneMenu>
+
+
+					<h:outputLabel value="Data Inicial " />
+                  <p:calendar pattern="dd/MM/yyyy"
+				  id="txtDataInicial" value="${diarioMB.dataInicial}" disabled = "${diarioMB.desabilitaDataInicial}"> 
+				  <p:ajax update="txtDataFinal" event="valueChange"
+							listener="${diarioMB.listaTurmas()}"  />
+				</p:calendar>
+				
+					<h:outputLabel value="Data Final " />
+                  <p:calendar pattern="dd/MM/yyyy"
+				  id="txtDataFinal" value="${diarioMB.dataFinal}"  disabled = "${diarioMB.desabilitaDataFinal}"/>
+				
+				
+					<p:hotkey bind="enter"
+						actionListener="#{diarioMB.consultarNome()}" />
+
+	</p:panelGrid>
+
+	
+	
+	       <h:panelGrid columns="2">
+           <p:selectOneRadio value="${diarioMB.ausenciaDisciplina}">
+           <f:selectItem itemValue="false" itemLabel="Lista por turma"/> 
+		   <f:selectItem itemValue="true" itemLabel="Lista por disciplina"/>
+		   <p:ajax update="panel" event="change"/>    
+		   </p:selectOneRadio>			
+		</h:panelGrid>
+			
+			
+
+<p:outputPanel id="panel">
+<p:panel id="panelA" rendered="#{diarioMB.ausenciaDisciplina}">   
+ 
+<h:outputText value = "Disciplina &#160; &#160; " id="disciplina"/>
+
+<p:selectOneMenu id="txtDisciplina"
+value="#{diarioMB.diarioAtual.idDisciplina}"
+style="width:600px;" >
+<f:selectItem itemLabel="" size="100" itemValue="" />
+<f:selectItems value="#{diarioMB.listaDisciplinas()}" var="disciplina"
+itemLabel="#{disciplina.nome}" itemValue="#{disciplina.IDDisciplina}" />
+</p:selectOneMenu>
+</p:panel>
+</p:outputPanel>
+
+<center> 
+						<h:panelGroup>
+
+
+							<p:commandButton value="Gerar Relatório" ajax="false" 
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${diarioMB.gerarLista()}" />
+							
+							<p:commandButton value="Gerar Gráfico" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${diarioMB.graficoComparativoDiarioTurma()}" />
+							
+						</h:panelGroup>
+							</center>					
+					
+					</p:panel>
+		</h:form>
+	</div>
+
+</h:body>
+</html>

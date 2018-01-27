@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>TCCAtualizado</display-name>
+  <welcome-file-list>
+    <welcome-file>index.xhtml</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.jsf</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+    <param-value>true</param-value>
+  </context-param>
+ 
+<filter>
+<filter-name>PrimeFaces FileUpload Filter</filter-name>
+<filter-class>
+org.primefaces.webapp.filter.FileUploadFilter
+</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>PrimeFaces FileUpload Filter</filter-name>
+<servlet-name>Faces Servlet</servlet-name>
+</filter-mapping>
+
+<context-param>
+   <param-name>primefaces.UPLOADER</param-name>
+   <param-value>commons</param-value>
+</context-param>
+  
+<!-- Realizando o mapeamento do Filtro de acesso criado -->
+
+<filter-mapping> 
+
+<filter-name>JSFFilter</filter-name> 
+
+<url-pattern>/page/*</url-pattern> 
+
+<dispatcher>REQUEST</dispatcher> 
+
+<dispatcher>FORWARD</dispatcher> 
+
+<dispatcher>INCLUDE</dispatcher> 
+
+<dispatcher>ERROR</dispatcher> 
+
+</filter-mapping> 
+
+<!-- Realizando configuraçõesm de timeout-->
+
+ <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+  
+  
+  <error-page>
+    <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+    <location>/acesso.jsf</location>
+</error-page>
+
+
+  <context-param>
+    <param-name>com.sun.faces.writeStateAtFormEnd</param-name>
+    <param-value>false</param-value>
+  </context-param>
+   
+   
+  <!--  Alterando o tema do primefaces
+  <context-param>  
+    <param-name>primefaces.THEME</param-name>  
+    <param-value>afternoon</param-value>  
+</context-param>  
+  -->
+  
+
+</web-app>

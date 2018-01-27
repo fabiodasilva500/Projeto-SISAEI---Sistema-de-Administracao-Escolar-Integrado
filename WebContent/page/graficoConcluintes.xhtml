@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Análise do Número de Estudantes Concluintes</title>
+</h:head>
+
+
+<h:body>
+<f:view contentType="text/html">
+
+<div id="corpo">
+
+
+
+<h:form id = "formConcluintes">
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Gráfico(s) de apoio à Decisão do Sistema Etec">
+ 
+ 
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+		
+				
+<p align="Right">
+<h:commandLink action="./estatisticaConcluintes.jsf">  Voltar </h:commandLink>  
+</p>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+
+<center> 
+
+
+          <p:pieChart id="concluintes" value="#{estatisticaMB.graficoConcluintes}" legendPosition="e"  showDataLabels="true"  
+                  title="Análise Gráfica do Percentual de Estudantes Concluintes" style="width:650px;height:500px" />  
+  
+   </center> 
+ 
+</p:tab>
+</p:tabView>
+</h:form>
+</div>
+</f:view>
+</h:body>
+</html>
+  

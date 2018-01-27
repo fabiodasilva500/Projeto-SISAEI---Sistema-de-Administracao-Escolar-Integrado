@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Modificação de senha de acesso</title>
+</h:head>
+
+<h:body>
+<f:view contentType="text/html">
+
+<div id="corpo">
+
+
+
+<h:form id = "formPrimeiroAcesso">
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Bem Vindo ao Sistema de Gestão Acadêmica da Etec-ZL">
+ 
+
+
+
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+
+<center>
+<p:panelGrid id="gridNovoCadastro" columns = "2">
+
+<h:outputText value = "Senha Anterior" />
+<p:password id="senhaAnterior" 
+value="${acessoMB.alteraPrimeiroAcesso.senhaAnterior}">
+</p:password>
+
+<h:outputText value = "Nova Senha" />
+<p:password id="senhaRedefinida" 
+value="${acessoMB.alteraPrimeiroAcesso.novaSenha}">
+</p:password>
+
+
+</p:panelGrid>
+
+
+
+ <br> </br>
+
+
+
+<h:panelGroup> 
+<p:commandButton value="Confirmar" ajax="false"
+style="color:blue; background-color:#CCEEFF" size="100"
+name="cmd" action="${acessoMB.alteraPrimeiroAcesso()}" />
+</h:panelGroup>
+</center>
+
+
+</p:tab>
+</p:tabView>
+</h:form>
+</div>
+</f:view>
+</h:body>
+
+
+
+</html>

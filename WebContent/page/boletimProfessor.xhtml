@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Acompanhamento Acadêmico</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+				style="width: 539px; height: 91px;" />
+
+		</div>
+
+
+		<h:form id="formBoletimProfessor">
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+			  	<li><a href="indexProfessor.jsf">Home</a></li>
+					<li><a href="diarioProfessor.jsf">Diário</a></li>
+					<li><a href="boletimProfessor.jsf">Entrega de Notas</a></li>
+					<li><a href="dependencia.jsf">Dependências</a></li>
+					<li><a href="contatoProfessor.jsf">Contate o estudante</a></li>
+				    <li> <h:commandLink action="#{ajudaMB.manualDoUsuario('professor')}"> Ajuda </h:commandLink>  </li>
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+					
+					
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+	
+
+
+			<p:panel header="Menu de Seleção" style="margin-bottom:10px;">
+				<p:panelGrid columns="2"  styleClass="semBorda">
+
+	            
+	           	<h:outputText value="Semestre" />
+					<p:selectOneMenu id="txtSemestre"
+						value="${boletimProfessorMB.selecaoSemestre}">
+						<f:selectItem itemValue="0" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<p:ajax update="txtAno txtConceito txtModulo curso turma disciplina" event="valueChange"
+							listener="${boletimProfessorMB.listaAnos()}" />
+					</p:selectOneMenu>
+
+					<h:outputText value="Ano" />
+					<p:selectOneMenu id="txtAno" value="#{boletimProfessorMB.selecaoAno}"
+						style="width:600px;" disabled="#{boletimProfessorMB.desabilitaAno}">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{boletimProfessorMB.listaAnos()}" var="anos"
+							itemLabel="#{anos}" itemValue="#{anos}" />
+						<p:ajax update="txtConceito curso txtConceito txtModulo turma disciplina" event="valueChange" listener="${boletimProfessorMB.listaAnos()}" />
+					</p:selectOneMenu>
+               
+
+					<h:outputText value="Número do Conceito" />
+					<p:selectOneMenu id="txtConceito"
+						value="${boletimProfessorMB.selecaoConceito}" style="width:90px;" disabled="#{boletimProfessorMB.desabilitaConceito}">
+						<f:selectItem itemValue="1" itemLabel="Parcial" />
+						<f:selectItem itemValue="2" itemLabel="Final" />
+						<p:ajax update="txtAulasDadas" event="valueChange"
+							listener="${boletimProfessorMB.atualizaAulasDadas()}" />
+					</p:selectOneMenu>
+
+
+					<h:outputLabel for="curso" value="Curso " />
+					<p:selectOneMenu id="curso" value="#{boletimProfessorMB.selecaoCurso}"
+						style="width:600px;" disabled="#{boletimProfessorMB.desabilitaCurso}">>
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{boletimProfessorMB.localizaCursos(acessoMB.acessoAtual)}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+						<p:ajax update="turma disciplina txtAulasDadas" event="valueChange"
+							listener="${boletimProfessorMB.listaTurmaCurso()}" />
+						<f:ajax render="turma"></f:ajax>
+					</p:selectOneMenu>
+
+
+					<h:outputText value="Modulo" />
+					<p:selectOneMenu id="txtModulo" value="${boletimProfessorMB.selecaoModulo}"
+						style="width:50px;" disabled="#{boletimProfessorMB.desabilitaModulo}">
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<f:selectItem itemValue="3" itemLabel="3º" />
+						<p:ajax update="turma disciplina txtAulasDadas" event="valueChange"
+							listener="${boletimProfessorMB.listaTurmaModulo()}" />
+					</p:selectOneMenu>
+
+					<h:outputLabel for="Turma" value="Turma" />
+					<p:selectOneMenu id="turma" value="#{boletimProfessorMB.selecaoTurma}"
+						style="width:600px;" disabled="#{boletimProfessorMB.desabilitaTurma}">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{boletimProfessorMB.listaTurmas}" var="turma"
+							itemLabel="#{turma.nome}" itemValue="#{turma.IDTurma}" />
+				    <p:ajax update="txtAulasDadas" event="valueChange"
+				   listener="${boletimProfessorMB.atualizaAulasDadas()}" />
+					</p:selectOneMenu>
+
+
+					<h:outputLabel for="Disciplina" value="Disciplina" />
+					<p:selectOneMenu id="disciplina"
+						value="#{boletimProfessorMB.selecaoDisciplina}" style="width:600px;"
+						disabled="#{boletimProfessorMB.desabilitaDisciplina}">
+						<p:ajax update="disciplina txtAulasDadas" event="valueChange"
+							listener="${boletimProfessorMB.listaDisciplina()}" />
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{boletimProfessorMB.listaDisciplinas}"
+							var="disciplina" itemLabel="#{disciplina.nome}"
+							itemValue="#{disciplina.IDDisciplina}" />
+					<p:ajax update="txtAulasDadas" event="valueChange"
+					listener="${boletimProfessorMB.atualizaAulasDadas()}" />
+					</p:selectOneMenu>
+
+
+					<h:outputText value="Aulas Dadas" />
+					<p:inputText id="txtAulasDadas" maxlength="3" size="3" disabled= "true"
+						value="${boletimProfessorMB.aulasDadas}">
+							<p:ajax update="txtAulasDadas" event="valueChange"
+							listener="${boletimProfessorMB.atualizaAulasDadas()}" />
+                    </p:inputText>
+
+
+					<div align="center">
+
+						<h:panelGroup>
+							<p:commandButton value="Avançar para a inserção " ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${boletimProfessorMB.redirecionar()}" />
+							<p:commandButton value="Modificar Dados"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" ajax="false" action="#{boletimProfessorMB.modificarDados()}">
+							</p:commandButton>
+							
+
+						</h:panelGroup>
+					</div>
+					
+				</p:panelGrid>
+			</p:panel>
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

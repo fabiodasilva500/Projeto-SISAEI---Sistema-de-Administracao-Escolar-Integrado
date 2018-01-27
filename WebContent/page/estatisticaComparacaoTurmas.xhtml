@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Acompanhamento Acadêmico</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+				style="width: 539px; height: 91px;" />
+
+		</div>
+
+
+		<h:form id="formBoletim">
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+				
+					<li><a href="indexCoordenador.jsf">Home</a></li>
+					<li><a href="Diario.jsf">Diário</a></li>
+				    <li><a href="escolheEstatistica.jsf">Análise do Rendimento Acadêmico</a></li>
+				    <li><a href="estatisticaInstituicao.jsf">Avaliação Institucional</a></li>	
+				    <li><a href="escolheEstatisticaArea.jsf">Análise da Área de Concentração</a></li>	
+				    <li><a href="estatisticaConcluintes.jsf">Evasão Escolar</a></li>	 
+				    <li> <h:commandLink action="#{ajudaMB.manualDoUsuario('coordenador')}"> Ajuda </h:commandLink>  </li> 			    		    
+				    <li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+	
+
+
+			<p:panel header="Menu de Seleção" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+	            
+	            
+					<h:outputLabel for="curso" value="Curso " />
+					<p:selectOneMenu id="curso" value="#{estatisticaMB.selecaoCurso}"
+						style="width:600px;">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{estatisticaMB.listaCursos}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+					</p:selectOneMenu>
+	            
+	            
+	              	<h:outputText value="Módulo" />
+					<p:selectOneMenu id="txtModulo"
+						value="${estatisticaMB.selecaoModulo}">
+						<f:selectItem itemValue="0" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<f:selectItem itemValue="3" itemLabel="3º" />
+		
+					</p:selectOneMenu>
+	            
+	           	<h:outputText value="Semestre Inicial" />
+					<p:selectOneMenu id="txtSemestreInicial"
+						value="${estatisticaMB.selecaoSemestreInicial}">
+						<f:selectItem itemValue="0" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+		
+					</p:selectOneMenu>
+
+					<h:outputText value="Ano Inicial" />
+					<p:selectOneMenu id="txtAnoInicial" value="#{estatisticaMB.selecaoAnoInicial}"
+						style="width:600px;">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{estatisticaMB.listaAnosGraficoComparacao()}" var="anos"
+							itemLabel="#{anos}" itemValue="#{anos}" />
+					</p:selectOneMenu>
+               
+
+				
+				    <h:outputText value="Semestre Final" />
+					<p:selectOneMenu id="txtSemestreFinal"
+						value="${estatisticaMB.selecaoSemestreFinal}">
+						<f:selectItem itemValue="0" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+		
+					</p:selectOneMenu>
+
+					<h:outputText value="Ano Final" />
+					<p:selectOneMenu id="txtAnoFinal" value="#{estatisticaMB.selecaoAnoFinal}"
+						style="width:600px;">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{estatisticaMB.listaAnosGraficoComparacao()}" var="anos"
+							itemLabel="#{anos}" itemValue="#{anos}" />
+					</p:selectOneMenu>
+               
+
+
+
+
+					<div align="center">
+						<h:panelGroup>
+						<center>
+						
+							<p:commandButton value="Gerar gráfico " ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${estatisticaMB.graficoComparativoTurmas()}" />
+				</center>
+						
+						</h:panelGroup>
+					</div>
+					
+				</p:panelGrid>
+			</p:panel>
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

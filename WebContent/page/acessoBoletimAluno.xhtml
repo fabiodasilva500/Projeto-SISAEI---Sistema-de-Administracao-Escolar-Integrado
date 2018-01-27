@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Cadastro de novo usuário</title>
+</h:head>
+
+<h:body>
+<f:view contentType="text/html">
+
+<div id="corpo">
+
+
+<h:form id="formVerificaBoletimAluno">
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Bem Vindo ao Sistema de Gestão Acadêmica da Etec-ZL">
+ 
+
+
+
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+<p align="Right">
+<h:commandLink action="./indexAluno.jsf">  Voltar </h:commandLink>  
+</p>
+
+			<p:panel header="Identificações" style="margin-bottom:10px;">
+				<p:panelGrid columns="2">
+
+
+           <h:selectOneRadio value="${boletimAlunoMB.requisicao}">
+		   <f:selectItem itemValue="parcial" itemLabel="Boletim Parcial"/>
+		   <f:selectItem itemValue="final" itemLabel="Boletim Final"/>
+			<f:selectItem itemValue="geral" itemLabel="Acompanhamento Geral"/>
+			</h:selectOneRadio>
+
+
+   <p:commandButton value="Gerar Boletim" ajax="false"
+style="color:blue; background-color:#CCEEFF" size="100"
+name="cmd" action="${boletimAlunoMB.gerarBoletim(acessoMB.acessoAtual.identificacao)}" />
+   
+				</p:panelGrid>
+			</p:panel>
+
+
+
+</p:tab>
+</p:tabView>
+
+</h:form>
+
+	</div>
+</f:view>
+</h:body>
+</html>

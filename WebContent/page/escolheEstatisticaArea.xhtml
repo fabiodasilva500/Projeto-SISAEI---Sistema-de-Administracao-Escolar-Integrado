@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet name="estiloTelaAberta.css" library="css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Acompanhamento Acadêmico</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+				style="width: 539px; height: 91px;" />
+
+		</div>
+
+		<h:form id="formEscolheArea">
+
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+					<li><a href="indexCoordenador.jsf">Home</a></li>
+					<li><a href="Diario.jsf">Diário</a></li>
+				    <li><a href="escolheEstatistica.jsf">Análise do Rendimento Acadêmico</a></li>
+				    <li><a href="estatisticaInstituicao.jsf">Avaliação Institucional</a></li>	
+				    <li><a href="escolheEstatisticaArea.jsf">Análise da Área de Concentração</a></li>	
+				    <li><a href="estatisticaConcluintes.jsf">Evasão Escolar</a></li>	 
+				    <li> <h:commandLink action="#{ajudaMB.manualDoUsuario('coordenador')}"> Ajuda </h:commandLink>  </li> 			    		    
+				    <li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+					</ul>
+			</div>
+		</div>
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+			<p:panel header="Selecione a estatística sobre a área de concentração desejada" style="margin-bottom:10px;">
+				<p:panelGrid columns="2">
+
+
+	       <h:selectOneRadio value="${estatisticaMB.requisicaoArea}" layout="custom">
+		   <f:selectItem itemValue="areaConcentracao" itemLabel="Análise da área de concentração"/>
+		   <f:selectItem itemValue="areaTurma" itemLabel="Análise do Rendimento da Turma"/>
+			<f:selectItem itemValue="areaAluno" itemLabel="Rendimento do Aluno"/>
+			</h:selectOneRadio>
+		
+				<h:panelGroup> 	<p:commandButton value="Avançar " ajax="false"
+                style="color:black; background-color:orange" size="100"
+								name="cmd" action="${estatisticaMB.redirecionaArea()}" />
+			</h:panelGroup>
+		</p:panelGrid>
+			</p:panel>
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

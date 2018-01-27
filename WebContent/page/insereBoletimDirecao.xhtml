@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:af="http://xmlns.oracle.com/adf/faces">
+
+
+<h:head>
+	<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Acompanhamento Acadêmico</title>
+</h:head>
+
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+		<h:form id="formInsereBoletim">
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+				<li><a href="indexDirecao.jsf">Home</a></li>
+					<li><a href="curso.jsf">Curso</a></li>
+					<li><a href="disciplina.jsf">Disciplina</a></li>
+					<li><a href="secretaria.jsf">Secretaria</a></li>
+					<li><a href="coordenador.jsf">Coordenador</a></li>
+					<li><a href="diretoria.jsf">Diretoria</a></li>
+					<li><a href="boletimDirecao.jsf">Boletim</a></li>
+					<li><a href="novoCadastroAcesso.jsf">Novo usuário</a></li>
+					<li><a href="excluiCadastroAcesso.jsf">Excluir usuário</a></li>
+					<li><a href="backupRestore.jsf">Backup</a></li>
+					<li> <h:commandLink action="#{ajudaMB.manualDoUsuario('diretor')}"> Ajuda </h:commandLink>  </li>
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar  </h:commandLink>  </li>
+
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+		
+		 <h:outputText value = "Conceito "  style="height:800px;"/>
+	    <h:outputText  value="${boletimMB.selecaoConceito}º  &#160;" style="width:150px;" />
+    
+		
+	    <h:outputText value = "&#160; Nome da turma: "  style="height:800px;"/>
+	    <h:outputText  value="${boletimMB.nomeTurma}  &#160;" style="width:150px;" />
+    
+		
+		<h:outputText value = "&#160; Nome da disciplina: " style="width:150px;" />
+		<h:outputText  value="${boletimMB.nomeDisciplina} &#160;"  style="width:150px;"/>
+		
+		 
+			<p:dataTable value="${boletimMB.listaAlunos}" var="aluno"
+				paginator="true"
+		    style="max-width: 1100px; min-width: 1100px">
+		    
+		   
+				<p:column 	
+                style="max-width: 4px; min-width: 4px; overflow: hidden"  
+				 headerText="RM">${aluno.identificacao}
+				</p:column>
+				
+				<p:column  
+                style="max-width: 80px; min-width: 80px; overflow: hidden"  
+				headerText="Nome">${aluno.nome}
+				</p:column>
+	     
+	     <p:column
+	     style="max-width: 8px; min-width: 8px; overflow: hidden"  
+	     headerText="Menção">
+	 
+	     <p:selectOneMenu id="txtNota" value="${boletimMB.selecaoNota}" style="width:70px;"  required="true"
+	     requiredMessage="O campo menção é de preenchimento obrigatório">
+	        <center> 
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="MB" itemLabel="MB" />
+						<f:selectItem itemValue="B" itemLabel="B" />
+						<f:selectItem itemValue="R" itemLabel="R" />
+						<f:selectItem itemValue="I" itemLabel="I" />
+						<f:selectItem itemValue="AE" itemLabel="AE" />
+						
+                        <p:ajax event="valueChange" update="txtNota txtFaltas txtFrequencia txtStatus"
+					    listener="${boletimMB.atualizaNotaStatusInsere(aluno.identificacao)}"/> 
+		 		 </center>
+		 
+		 </p:selectOneMenu>
+		 
+	     </p:column>
+	     <p:column
+	     style="max-width: 3px; min-width: 3px; overflow: hidden"  
+	     headerText="Faltas">
+         <p:inputText id="txtFaltas" maxlength="3" size="3"
+		 value="${boletimMB.faltas}"
+		 disabled = "true">
+		 </p:inputText>
+	     </p:column>
+	     
+	       
+	     <p:column
+	     style="max-width: 3px; min-width: 3px; overflow: hidden"  
+	     headerText="Frequência">
+         <p:inputText id="txtFrequencia" maxlength="3" size="3"
+		 value="${boletimMB.frequencia}" 
+	     disabled="true" />
+	     </p:column>
+	     
+	     <p:column
+	     style="max-width: 15px; min-width: 15px; overflow: hidden"  
+	     headerText="Status">
+         <p:inputText id="txtStatus" maxlength="15" size="15"
+		 value="${boletimMB.boletimAtual.status}"
+	     disabled="true" />  
+	     </p:column>
+
+			</p:dataTable>
+			
+			<br> </br>
+			<center> 
+<p:commandButton 
+value="Enviar Dados"
+style="color:blue; background-color:#CCEEFF" size="100"
+name="cmd"
+ajax="false" 
+action="#{boletimMB.inserir()}" /> 
+
+</center>
+
+<p:hotkey bind="tab" actionListener="#{boletimMB.verificarTeclaTab()}"/>  
+
+ 
+		</h:form>
+	</div>
+
+</h:body>
+</html>

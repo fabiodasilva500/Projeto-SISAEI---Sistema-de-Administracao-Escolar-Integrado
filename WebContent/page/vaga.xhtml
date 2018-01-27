@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Manutenção do Cadastro de disciplinas</title>
+	<h:outputScript name="calendario.js" library="js" />  
+	
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+			<h:graphicImage value="/resources/imagens/novo_logo.png"
+				style="width: 539px; height: 91px;" />
+
+		</div>
+
+		<h:form id="formVagas">
+
+
+			<div id="sse50">
+				<div id="sses50">
+					<ul>
+						<li><a href="indexDirecao.jsf">Home</a></li>
+						<li><a href="curso.jsf">Curso</a></li>
+						<li><a href="disciplina.jsf">Disciplina</a></li>
+						<li><a href="secretaria.jsf">Secretaria</a></li>
+						<li><a href="coordenador.jsf">Coordenador</a></li>
+						<li><a href="diretoria.jsf">Diretoria</a></li>
+						<li><a href="boletimDirecao.jsf">Boletim</a></li>
+						<li><a href="novoCadastroAcesso.jsf">Novo usuário</a></li>
+						<li><a href="excluiCadastroAcesso.jsf">Excluir usuário</a></li>
+						<li><a href="backupRestore.jsf">Backup</a></li>
+						<li><h:commandLink action="#{ajudaMB.manualDoUsuario('diretor')}"> Ajuda </h:commandLink>	</li>
+						<li><h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar </h:commandLink>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+
+
+			<p:growl id="mensagem" showDetail="true" sticky="true" />
+			
+			
+			
+			<center> 
+			<p:panel header="Oportunidades de Emprego"  styleClass="semBorda">
+
+	   			
+			  <h:panelGrid columns="2">
+           <p:selectOneRadio value="${vagaMB.requisicao}">
+           <f:selectItem itemValue="novaOportunidade" itemLabel="Inserir nova oportunidade"/> 	   
+           <f:selectItem itemValue="empresa" itemLabel="Pesquisar por Empresa"/> 
+		   <f:selectItem itemValue="data" itemLabel="Pesquisar por Data"/>
+		   <p:ajax update="panelInsercao panelPesquisaEmpresa panelPesquisaData" event="change" 
+		   listener="${vagaMB.verificaSelecao()}"/>    
+		   </p:selectOneRadio>			
+		</h:panelGrid>
+	   
+			</p:panel>
+			</center>
+			
+
+
+
+<p:outputPanel id="panelInsercao">
+ <p:panel id="panelInsere" rendered="#{vagaMB.habilitaInsercao}">   
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+					<h:outputText value="ID da Oportunidade"
+						style="color:blue; background-color:80BFFF" />
+					<p:inputText value="${vagaMB.vagaAtual.IDOportunidade}"
+						id="txtIDVaga" maxlength="10" size="10" disabled="true">
+					</p:inputText>
+
+
+					<h:outputLabel for="curso" value="Curso " />
+					<p:selectOneMenu id = "txtCurso" value="#{vagaMB.vagaAtual.curso}"
+						style="width:600px;">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{vagaMB.listaCursos()}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+				<p:ajax update="txtIDVaga" event="valueChange"
+							listener="${vagaMB.localizaIDDisciplina()}" />
+					</p:selectOneMenu>
+
+					<h:outputText value="Nome da Empresa" />
+					<p:inputText id="txtNomeInsere" maxlength="100" size="100"
+						value="${vagaMB.vagaAtual.nomeEmpresa}">
+					</p:inputText>
+
+
+<h:outputText value="Cargo" />
+					<p:inputText id="txtCargo" maxlength="100" size="100"
+						value="${vagaMB.vagaAtual.cargo}">
+					</p:inputText>
+
+					<h:outputText value="Descrição da vaga" />
+					<p:inputTextarea id = "txtDescricaoInsere" rows="4" cols="100"
+						value="#{vagaMB.vagaAtual.descricao}" queryDelay="750"
+						minQueryLength="4" />
+
+
+					<h:outputText value="Requisitos" />
+					<p:inputTextarea id = "txtRequisitosInsere" rows="5" cols="100"
+						value="#{vagaMB.vagaAtual.requisitos}" queryDelay="750"
+						minQueryLength="4" />
+
+
+					<h:outputText value="Diferenciais" />
+					<p:inputTextarea id= "txtDiferenciaisInsere" rows="2" cols="100" 
+						value="#{vagaMB.vagaAtual.diferenciais}" queryDelay="750"
+						minQueryLength="4" />
+
+				<h:outputText value="Email" />
+					<p:inputText id="txtEmailInsere" maxlength="100" size="100"
+						value="${vagaMB.vagaAtual.email}">
+					</p:inputText>
+
+
+					<h:outputLabel value="Data Inicial" />
+					<p:calendar pattern="dd/MM/yyyy" id="txtDataInicialInsere"
+						value="${vagaMB.vagaAtual.dataInicial}" />
+
+					<h:outputLabel value="Data Final" />
+					<p:calendar pattern="dd/MM/yyyy" id="txtDataFinalInsere"
+						value="${vagaMB.vagaAtual.dataFinal}" />
+
+
+					<div align="center">
+
+						<h:panelGroup>
+
+							<p:commandButton value="Inserir" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${vagaMB.inserir()}" />
+	
+				<p:commandButton value="Atualizar" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${vagaMB.atualizar()}" />
+
+	
+						</h:panelGroup>
+					</div>
+				</p:panelGrid>
+			</p:panel>
+</p:outputPanel>			
+
+
+<p:outputPanel id="panelPesquisaEmpresa">
+ <p:panel id="panelEmpresa" rendered="#{vagaMB.habilitaEmpresa}">   
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+
+					<h:outputText value="Nome da Empresa" />
+					<p:inputText id="txtNomePesqEmp" maxlength="100" size="100"
+						value="${vagaMB.vagaAtual.nomeEmpresa}">
+					</p:inputText>
+
+					<h:outputLabel value="Data Inicial" />
+					<p:calendar pattern="dd/MM/yyyy" id="txtDataInicialPesqEmp"
+						value="${vagaMB.vagaAtual.dataInicial}" />
+
+					<h:outputLabel value="Data Final" />
+					<p:calendar pattern="dd/MM/yyyy" id="txtDataFinalPesqEmp"
+						value="${vagaMB.vagaAtual.dataFinal}" />
+
+
+					<div align="center">
+
+						<h:panelGroup>
+
+							<p:commandButton value="Pesquisar" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${vagaMB.pesquisarEmpresa()}" />
+			
+						</h:panelGroup>
+					</div>	
+			</p:panelGrid>
+			</p:panel>
+				
+									
+	</p:outputPanel>
+			
+	
+
+
+<p:outputPanel id="panelPesquisaData">
+ <p:panel id="panelData" rendered="#{vagaMB.habilitaData}">   
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+					<h:outputLabel value="Data Inicial" />
+					<p:calendar pattern="dd/MM/yyyy" id="txtDataInicialPesqData"
+						value="${vagaMB.vagaAtual.dataInicial}" />
+
+					<h:outputLabel value="Data Final" />
+					<p:calendar pattern="dd/MM/yyyy" id="txtDataFinalPesqData"
+						value="${vagaMB.vagaAtual.dataFinal}" />
+
+
+					<div align="center">
+
+						<h:panelGroup>
+							<p:commandButton value="Pesquisar" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${vagaMB.pesquisarData()}" />
+							
+						</h:panelGroup>
+					</div>
+				</p:panelGrid>
+			</p:panel>
+</p:outputPanel>
+
+
+<p:dataTable id="pesquisaEmpresa" value="#{vagaMB.listaVagas}"  var="empresa"
+				paginator="true">
+
+
+        <p:column headerText="Id da Vaga">
+            <h:outputText value="#{empresa.IDOportunidade}" />
+        </p:column>
+        <p:column headerText="Empresa">
+            <h:outputText value="#{empresa.nomeEmpresa}" />
+        </p:column>
+        <p:column headerText="Descrição da Vaga">
+            <h:outputText value="#{empresa.descricao}" />
+        </p:column>
+          <p:column headerText="Requisitos">
+            <h:outputText value="#{empresa.requisitos}" />
+        </p:column> 
+         <p:column headerText="Diferenciais">
+            <h:outputText value="#{empresa.diferenciais}" />
+        </p:column>
+         <p:column headerText="Email">
+            <h:outputText value="#{empresa.email}" />
+                  </p:column>
+      
+				<p:column headerText="Opções">
+					<p:commandButton value="Remover" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${vagaMB.remover(empresa.IDOportunidade)}" />
+
+
+				</p:column>
+			</p:dataTable>
+			
+		</h:form>
+	</div>
+
+</h:body>
+</html>

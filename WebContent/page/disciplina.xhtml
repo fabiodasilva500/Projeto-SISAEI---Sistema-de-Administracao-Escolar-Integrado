@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Manutenção do Cadastro de disciplinas</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+		<h:form id="formDisciplinas">
+
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+				<li><a href="indexDirecao.jsf">Home</a></li>
+					<li><a href="curso.jsf">Curso</a></li>
+					<li><a href="disciplina.jsf">Disciplina</a></li>
+					<li><a href="secretaria.jsf">Secretaria</a></li>
+					<li><a href="coordenador.jsf">Coordenador</a></li>
+					<li><a href="diretoria.jsf">Diretoria</a></li>
+					<li><a href="boletimDirecao.jsf">Boletim</a></li>
+					<li><a href="novoCadastroAcesso.jsf">Novo usuário</a></li>
+					<li><a href="excluiCadastroAcesso.jsf">Excluir usuário</a></li>
+					<li><a href="backupRestore.jsf">Backup</a></li>			
+                    <li> <h:commandLink action="#{ajudaMB.manualDoUsuario('diretor')}"> Ajuda </h:commandLink>  </li>	
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar </h:commandLink>  </li>
+			
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+			
+
+			<p:panel header="Disciplinas" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+
+					<h:outputText value="ID da Disciplina"
+						style="color:blue; background-color:80BFFF" /> 
+					<p:inputText value="${disciplinaMB.disciplinaAtual.IDDisciplina}"
+						id="txtIDDisciplina" maxlength="10" size = "10" disabled = "true"
+ 						validatorMessage="A disciplina deve conter no máximo 10 números">
+					</p:inputText>
+
+					<h:outputText value="Nome" />
+					<p:inputText id="txtNome" maxlength="100" size="100"
+						value="${disciplinaMB.disciplinaAtual.nome}">
+							<p:ajax update="txtIDDisciplina" event="valueChange"
+							listener="${disciplinaMB.localizaIDDisciplina()}" />
+					</p:inputText>
+
+
+					<h:outputText value="Sigla" />
+					<p:inputText id="txtSigla" maxlength="100" size="6"
+						value="${disciplinaMB.disciplinaAtual.sigla}"/>
+
+
+					<h:outputText value="Descrição" />
+					<p:inputText id="txtDescricao" maxlength="100" size="100"
+						value="${disciplinaMB.disciplinaAtual.descricao}" />
+
+					<h:outputText value="Ata" />
+					<p:inputTextarea rows="4" cols="100" value="#{disciplinaMB.disciplinaAtual.ata}" queryDelay="750" minQueryLength="4" />  
+		
+			     <h:outputLabel for="cargaHoraria" value="Carga horária" />
+					<p:selectOneMenu value="#{disciplinaMB.disciplinaAtual.cargaHoraria}"
+						style="width:600px;">
+						<f:selectItem itemValue="50"  itemLabel="50 horas"  />
+						<f:selectItem itemValue="100" itemLabel="100 horas" />
+ 					</p:selectOneMenu>
+		
+		
+					<h:outputLabel for="curso" value="Curso " />
+					<p:selectOneMenu value="#{disciplinaMB.disciplinaAtual.curso}"
+						style="width:600px;">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{disciplinaMB.listaCursos()}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+				<p:ajax update="txtAreaConcentracao" event="valueChange"
+                        listener="${disciplinaMB.listaAreas()}"/>
+ 					</p:selectOneMenu>
+						
+<h:outputText value = "Módulo do Curso" />
+<p:selectOneMenu id="txtModulo" value="${disciplinaMB.disciplinaAtual.modulo}"
+valueChangeListener="$disciplinaMB.pesquisarNome()}"  >  
+<f:selectItem itemValue="1" itemLabel="1"/>  
+ <f:selectItem itemValue="2" itemLabel="2"/>  
+ <f:selectItem itemValue="3" itemLabel="3"/>  
+  </p:selectOneMenu>  
+  
+  <h:outputText value = "Área de Concentração" />
+  	<p:selectOneMenu id="txtAreaConcentracao" value="#{disciplinaMB.disciplinaAtual.IDAreaConcentracao}"
+						style="width:600px;">
+						<p:ajax update="txtAreaConcentracao" event="valueChange"
+                        listener="${disciplinaMB.listaAreas()}"/>
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{disciplinaMB.listaAreas()}" var="area"
+							itemLabel="#{area.nome}" itemValue="#{area.IDArea}" />
+	</p:selectOneMenu>
+ 
+					<div align="center">
+
+						<h:panelGroup>
+
+
+
+							<p:commandButton value="Inserir" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${disciplinaMB.inserir()}" />
+							<p:commandButton value="Pesquisar" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${disciplinaMB.pesquisarPorNome()}" />
+						<p:commandButton value="Localizar Área de Concentração" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${disciplinaMB.localizarArea()}" />
+						</h:panelGroup>
+					</div>
+				</p:panelGrid>
+			</p:panel>
+
+
+
+			<p:dataTable value="${disciplinaMB.disciplinaAtual}" var="disciplina"
+				paginator="true">
+
+
+				<p:column headerText="ID Disciplina">${disciplina.IDDisciplina}</p:column>
+				<p:column headerText="Nome">${disciplina.nome}</p:column>
+				<p:column headerText="Sigla">${disciplina.sigla}</p:column>
+				<p:column headerText="Modulo">${disciplina.modulo}</p:column>	
+				<p:column headerText="Ata">${disciplina.ata}</p:column>
+				<p:column headerText="Carga Horária">${disciplina.cargaHoraria}</p:column>
+				<p:column headerText="Curso">${disciplina.curso}</p:column>
+				<p:column headerText="Área de Concentração">${disciplina.IDAreaConcentracao}</p:column>
+				
+
+				<p:column headerText="Opções">
+					<p:commandButton value="Atualizar" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${disciplinaMB.atualizar()}" />
+					<p:commandButton value="Remover" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${disciplinaMB.remover()}" />
+
+
+				</p:column>
+			</p:dataTable>
+
+
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

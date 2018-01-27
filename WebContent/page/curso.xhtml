@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Manutenção do Cadastro de Cursos</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+		<h:form id="formCurso">
+
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+					<li><a href="indexDirecao.jsf">Home</a></li>
+					<li><a href="curso.jsf">Curso</a></li>
+					<li><a href="disciplina.jsf">Disciplina</a></li>
+					<li><a href="secretaria.jsf">Secretaria</a></li>
+					<li><a href="coordenador.jsf">Coordenador</a></li>
+					<li><a href="diretoria.jsf">Diretoria</a></li>
+					<li><a href="boletimDirecao.jsf">Boletim</a></li>
+					<li><a href="novoCadastroAcesso.jsf">Novo usuário</a></li>
+					<li><a href="excluiCadastroAcesso.jsf">Excluir usuário</a></li>
+					<li><a href="backupRestore.jsf">Backup</a></li>			
+					<li> <h:commandLink action="#{ajudaMB.manualDoUsuario('diretor')}"> Ajuda </h:commandLink>  </li>	
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar </h:commandLink>  </li>
+				
+					
+					
+			
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+			
+			<p:panel header="Cursos" background-color = "white" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+
+					<h:outputText value="ID do Curso"
+						style="color:blue; background-color:80BFFF" />
+					<p:inputText value="${cursoMB.cursoAtual.id}"
+						id="txtIDCurso" maxlength="10"
+						validatorMessage="O ID do curso deve conter no máximo 10 caracteres" disabled="true"
+						size = "10">
+					</p:inputText>
+
+					<h:outputText value="Nome" />
+					<p:inputText id="txtNome" maxlength="100" size="100"
+						value="${cursoMB.cursoAtual.nome}" >
+							 <p:ajax update="txtIDCurso" event="valueChange"
+							listener="${cursoMB.localizaIDCurso()}" />
+							</p:inputText>
+						
+						<h:outputText value="Descrição" />
+					<p:inputText id="txtDescricao" maxlength="100" size="100"
+						value="${cursoMB.cursoAtual.descricao}" />
+
+					<h:outputText value="Sigla" />
+					<p:inputText id="txtSigla" maxlength="6" size="6"
+						value="${cursoMB.cursoAtual.sigla}" />
+
+					
+		
+					<h:outputText value="Tipo" />
+					<p:selectOneMenu id="txtTipo" value="${cursoMB.cursoAtual.tipo}">
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="Presencial" itemLabel="Presencial" />
+						<f:selectItem itemValue="EAD" itemLabel="EAD" />
+					</p:selectOneMenu>
+						
+				
+						
+						
+					<h:outputText value="Eixo Tecnológico" />
+					<p:inputText id="txtAulasTotais" maxlength="50" size="50"
+						value="${cursoMB.cursoAtual.eixoTecnologico}" />
+
+					<h:outputText value="Coordenador de Área" />
+					<p:inputText id="txtCoordenadorDeArea" maxlength="100" size="100"
+						value="${cursoMB.cursoAtual.corArea}" />
+						
+					<h:outputText value="Coordenador do Curso" />
+					<p:inputText id="txtCoordenadorDoCurso" maxlength="100" size="100"
+						value="${cursoMB.cursoAtual.corCurso}" />
+						
+
+
+					<div align="center">
+
+						<h:panelGroup>
+
+
+
+							<p:commandButton value="Inserir" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${cursoMB.inserir()}" />
+							<p:commandButton value="Pesquisar por Nome" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${cursoMB.pesquisarPorNome()}" />
+							<p:commandButton value="Áreas de Concentação" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${cursoMB.redireciona()}" />
+						
+											
+						</h:panelGroup>
+					</div>
+				</p:panelGrid>
+			</p:panel>
+
+
+
+			<p:dataTable value="${cursoMB.cursoAtual}" var="curso"
+				paginator="true">
+
+
+				<p:column headerText="Identificação">${curso.id}</p:column>
+				<p:column headerText="Nome">${curso.nome}</p:column>
+				<p:column headerText="Sigla">${curso.sigla}</p:column>
+				<p:column headerText="Descrição">${curso.descricao}</p:column>
+				<p:column headerText="Tipo">${curso.tipo}</p:column>
+				<p:column headerText="Coordenador de Curso">${curso.corCurso}</p:column>
+
+				<p:column headerText="Opções">
+					<p:commandButton value="Atualizar" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${cursoMB.atualizar()}" />
+					<p:commandButton value="Remover" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${cursoMB.remover()}" />
+
+
+				</p:column>
+			</p:dataTable>
+
+
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

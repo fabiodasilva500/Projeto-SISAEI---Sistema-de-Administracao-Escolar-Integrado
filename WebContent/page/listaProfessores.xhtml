@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:af="http://xmlns.oracle.com/adf/faces">
+
+
+<h:head>
+	<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Inserção de Professores em turmas</title>
+</h:head>
+
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+		
+		<h:form id="formListaProfessores">
+
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+					<li><a href="index.jsf">Home</a></li>
+					<li><a href="aluno.jsf">Aluno</a></li>
+					<li><a href="turma.jsf">Turma</a></li>
+					<li><a href="professor.jsf">Professor</a> </li>
+					<li><a href="boletim.jsf">Boletim</a></li>
+					<li><a href="matricula.jsf">Matrículas</a></li>
+					<li><a href="escolheDeclaracao.jsf">Declarações</a></li>
+					<li> <h:commandLink action="#{ajudaMB.manualDoUsuario('secretaria')}"> Ajuda </h:commandLink>  </li>
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+			
+				    
+			        
+		
+
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+		
+
+			<p:dataTable value="${professorMB.professores}" var="professor"
+				paginator="true" size="100">
+
+
+				<p:column headerText="ID do Professor">${professor.IDProfessor}</p:column>
+				<p:column headerText="Nome">${professor.nome}</p:column>
+				<p:column headerText="Status">${professor.statusAtual}</p:column>
+				<p:column headerText="Telefone">${professor.telefone}</p:column>
+				<p:column headerText="Celular">${professor.celular}</p:column>
+				<p:column headerText="Email">${professor.email}</p:column>
+				
+	
+			</p:dataTable>
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

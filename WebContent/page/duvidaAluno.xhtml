@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Entre em contato com os seus alunos</title>
+</h:head>
+
+<h:body>
+<f:view contentType="text/html">
+
+<div id="corpo">
+
+
+<h:form id="formDuvidaAluno">
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Bem Vindo ao Sistema de Gestão Acadêmica da Etec-ZL">
+ 
+
+
+	<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 89px;"/>
+
+		</div>
+
+<p align="Right">
+<h:commandLink action="./indexAluno.jsf">  Voltar </h:commandLink>  
+</p>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+			
+
+			<p:panel header="Entre em contato com o seu professor" style="margin-bottom:10px;"
+			>
+		<p:panelGrid styleClass="semBorda" columns="2">  
+
+
+ 	<h:outputText value="Semestre" />
+					<p:selectOneMenu id="txtSemestre"
+						value="${duvidaMB.selecaoSemestre}">
+						<f:selectItem itemValue="0" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<p:ajax update="txtAno txtTurma" event="valueChange"
+							listener="${duvidaMB.listaAnos()}" />
+					</p:selectOneMenu>
+
+					<h:outputText value="Ano" />
+					<p:selectOneMenu id="txtAno" value="#{duvidaMB.selecaoAno}"
+						style="width:600px;" >
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{duvidaMB.listaAnos()}" var="anos"
+							itemLabel="#{anos}" itemValue="#{anos}" />
+						<p:ajax update="txtTurma" event="valueChange" listener="${duvidaMB.listaAnos()}" />
+					</p:selectOneMenu>
+                
+
+
+				   <h:outputText value="Curso" />
+					<p:selectOneMenu id="txtCurso"
+						value="${duvidaMB.selecaoCurso}" style="width:600px;"> 
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{duvidaMB.listaCursos()}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+						<p:ajax update="txtTurma txtDisciplina txtProfessor" event="valueChange"
+							listener="${duvidaMB.listaDisciplinas()}" />		
+					</p:selectOneMenu>
+	            
+
+				   <h:outputText value="Módulo" />
+					<p:selectOneMenu id="txtModulo"
+						value="${duvidaMB.selecaoModulo}">
+						
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+                        <f:selectItem itemValue="3" itemLabel="3º" />
+						<p:ajax update="txtTurma txtDisciplina txtProfessor" event="valueChange"
+							listener="${duvidaMB.listaDisciplinas()}" />									
+					</p:selectOneMenu>
+					
+					
+					   <h:outputText value="Turma" />
+					<p:selectOneMenu id="txtTurma"
+						value="${duvidaMB.selecaoTurma}"
+						style="width:600px;" >
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{duvidaMB.listaTurmas()}" var="turma"
+							itemLabel="#{turma.nome}" itemValue="#{turma.IDTurma}" />
+							
+					     	
+						<p:ajax update="txtProfessor" event="valueChange"
+							listener="${duvidaMB.listaTurmas()}" />									
+					</p:selectOneMenu>
+					
+				
+					<h:outputText value="Disciplina" />
+					<p:selectOneMenu id="txtDisciplina"
+						value="${duvidaMB.selecaoDisciplina}" style="width:600px;"> 
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{duvidaMB.listaDisciplinas()}" var="disciplina"
+							itemLabel="#{disciplina.nome}" itemValue="#{disciplina.IDDisciplina}" />
+						 	
+						<p:ajax update="txtProfessor" event="valueChange"
+							listener="${duvidaMB.listaTurmas()}" />		
+							
+					</p:selectOneMenu>
+	            
+
+					<h:outputText value="Professor" />
+					<p:selectOneMenu id="txtProfessor" value = "${duvidaMB.selecaoProfessor}" 
+						style="width:600px;" >
+						
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{duvidaMB.listaProfessoresTurma()}" var="professor"
+							itemLabel="#{professor.nome}" itemValue="#{professor.IDProfessor}" />
+					</p:selectOneMenu>
+               
+					<h:outputText value="Assunto " />
+						<p:inputText id="txtAssunto" maxlength="100" size="100"
+						value="${duvidaMB.assunto}"> 
+				
+					   </p:inputText>
+
+					<h:outputText value="Conteúdo" />
+					<p:inputTextarea rows="6" cols="100" id ="txtConteudo" value="#{duvidaMB.conteudo}" queryDelay="750" minQueryLength="4"> 
+				    </p:inputTextarea>
+				        
+                  	</p:panelGrid>
+                  	
+                  	<br> </br>
+                  	<br> </br>
+                  	
+             <h:panelGrid columns="2">
+           <p:selectOneRadio value="${duvidaMB.habilitaGridArquivo}">
+           <f:selectItem itemValue="false" itemLabel="Não anexar arquivo &#160; &#160; &#160; &#160;"/> 
+		   <f:selectItem itemValue="true" itemLabel="Anexar arquivo"/>
+		   <p:ajax update="panelHabilitaGridEmail" event="change"/>    
+		   </p:selectOneRadio>			
+		</h:panelGrid>
+                  	
+                  	
+                  	<p:outputPanel id="panelHabilitaGridEmail">
+<p:panel id="panelArquivo" rendered="#{duvidaMB.habilitaGridArquivo}" styleClass="semBorda">  
+ <p:fileUpload fileUploadListener="#{duvidaMB.uploadListener}" />
+</p:panel>
+</p:outputPanel>
+                  	
+	
+<br>
+</br>
+<center> 
+						<h:panelGroup>
+
+							<p:commandButton value="Enviar Email" ajax="false"
+                            style="color:black; background-color:orange" size="100"
+ 								name="cmd" action="${duvidaMB.enviarEmail(acessoMB.acessoAtual.email)}" />
+						</h:panelGroup>
+						</center>
+						
+					</p:panel>
+ 
+	
+	</p:tab>
+</p:tabView>
+
+</h:form>
+
+	</div>
+</f:view>
+
+
+</h:body>
+</html>

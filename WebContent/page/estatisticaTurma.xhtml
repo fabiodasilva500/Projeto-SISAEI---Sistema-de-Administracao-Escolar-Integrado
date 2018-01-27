@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Acompanhamento Acadêmico</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+				style="width: 539px; height: 91px;" />
+
+		</div>
+
+
+		<h:form id="formBoletim">
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+					<li><a href="indexCoordenador.jsf">Home</a></li>
+					<li><a href="Diario.jsf">Diário</a></li>
+				    <li><a href="escolheEstatistica.jsf">Estatísticas</a></li>
+				    <li><a href="estatisticaInstituicao.jsf">Avaliação Institucional</a></li>				    
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+					
+					
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+	
+
+
+			<p:panel header="Menu de Seleção" style="margin-bottom:10px;">
+				<p:panelGrid columns="2">
+
+	            
+	           	<h:outputText value="Semestre" />
+					<p:selectOneMenu id="txtSemestre"
+						value="${estatisticaMB.selecaoSemestre}">
+						<f:selectItem itemValue="0" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<p:ajax update="txtAno  txtModulo curso turma" event="valueChange"
+							listener="${estatisticaMB.listaAnosGraficoComparacao()}" />
+					</p:selectOneMenu>
+
+					<h:outputText value="Ano" />
+					<p:selectOneMenu id="txtAno" value="#{estatisticaMB.selecaoAno}"
+						style="width:600px;" disabled="#{estatisticaMB.desabilitaAno}">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{estatisticaMB.listaAnosGraficoComparacao()}" var="anos"
+							itemLabel="#{anos}" itemValue="#{anos}" />
+						<p:ajax update="curso  txtModulo turma" event="valueChange" listener="${estatisticaMB.listaAnosGraficoComparacao()}" />
+					</p:selectOneMenu>
+               
+
+				
+
+					<h:outputLabel for="curso" value="Curso " />
+					<p:selectOneMenu id="curso" value="#{estatisticaMB.selecaoCurso}"
+						style="width:600px;" disabled="#{estatisticaMB.desabilitaCurso}">>
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{estatisticaMB.listaCursos}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+						<p:ajax update="turma" event="valueChange"
+							listener="${estatisticaMB.listaTurmaCurso()}" />
+						<f:ajax render="turma"></f:ajax>
+					</p:selectOneMenu>
+
+
+					<h:outputText value="Modulo" />
+					<p:selectOneMenu id="txtModulo" value="${estatisticaMB.selecaoModulo}"
+						style="width:50px;" disabled="#{estatisticaMB.desabilitaModulo}">
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<f:selectItem itemValue="3" itemLabel="3º" />
+						<p:ajax update="turma" event="valueChange"
+							listener="${estatisticaMB.listaTurmaModulo()}" />
+					</p:selectOneMenu>
+
+					<h:outputLabel for="Turma" value="Turma" />
+					<p:selectOneMenu id="turma" value="#{estatisticaMB.selecaoTurma}"
+						style="width:600px;" disabled="#{estatisticaMB.desabilitaTurma}">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{estatisticaMB.listaTurmas}" var="turma"
+							itemLabel="#{turma.nome}" itemValue="#{turma.IDTurma}" />
+					</p:selectOneMenu>
+
+
+					<div align="center">
+
+						<h:panelGroup>
+							<p:commandButton value="Gerar gráfico " ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${estatisticaMB.consultaTurmaFinal()}" />
+
+						
+
+						</h:panelGroup>
+					</div>
+					
+				</p:panelGrid>
+			</p:panel>
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

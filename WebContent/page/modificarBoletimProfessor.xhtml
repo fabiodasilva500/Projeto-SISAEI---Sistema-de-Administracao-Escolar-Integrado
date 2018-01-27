@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Acompanhamento Acadêmico</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+
+		<h:form id="formModificarDadosBoletimProfessor">
+
+		<div id="sse50">
+			<div id="sses50">
+			<ul>
+			<li><a href="indexProfessor.jsf">Home</a></li>
+					<li><a href="diarioProfessor.jsf">Diário</a></li>
+					<li><a href="boletimProfessor.jsf">Entrega de Notas</a></li>
+					<li><a href="dependencia.jsf">Dependências</a></li>
+					<li><a href="contatoProfessor.jsf">Contate o estudante</a></li>
+					<li> <h:commandLink action="#{ajudaMB.manualDoUsuario('professor')}"> Ajuda </h:commandLink>  </li>			  
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+					
+					
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+
+			<p:panel header="Dados do Boletim" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass="semBorda">
+				
+				   
+<h:outputLabel value="Nome do estudante " />
+<p:selectOneMenu value="#{boletimProfessorMB.boletimCadastrado.identificacaoAluno}"
+style="width:600px;">
+<f:selectItem itemLabel="" size="100" itemValue="" />
+<f:selectItems value="#{boletimProfessorMB.listaAlunos}" var="aluno"
+itemLabel="#{aluno.nome}" itemValue="#{aluno.identificacao}" />
+<p:ajax update="txtNota txtFaltas txtFrequencia" event="valueChange"
+listener="${boletimProfessorMB.localizaAlunos()}" />
+</p:selectOneMenu>
+		   
+
+		   <h:outputText value="Menção" />
+		   <p:selectOneMenu id="txtNota" value="${boletimProfessorMB.novoCadastroNota}" style="width:70px;"
+		    disabled = "${boletimProfessorMB.desabilitaNovaSelecaoNota}">
+					    
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="MB" itemLabel="MB" />
+						<f:selectItem itemValue="B" itemLabel="B" />
+						<f:selectItem itemValue="R" itemLabel="R" />
+						<f:selectItem itemValue="I" itemLabel="I" />
+						<f:selectItem itemValue="AE" itemLabel="AE" />
+						
+                        <p:ajax event="valueChange" update="txtStatus"
+					    listener="${boletimProfessorMB.atualizaNotaStatusAltera()}"/> 		 
+		   </p:selectOneMenu>
+		 
+		 
+		   <h:outputText value="Faltas"/>
+          <p:inputText id="txtFaltas" maxlength="3" size="3"
+		 value="${boletimProfessorMB.novoCadastroFaltas}"
+		 disabled = "true">
+		 </p:inputText>
+		 		    
+		    <h:outputText value="Frequência" />
+		    <p:inputText id="txtFrequencia" maxlength="8" size="8"
+		    disabled="true"
+		    value="${boletimProfessorMB.novoCadastroFrequencia}"/>
+		    
+		    <h:outputText value="Status"/>
+		    <p:inputText id="txtStatus" maxlength="20" size="20"
+		    disabled="true"
+		    value="${boletimProfessorMB.boletimCadastrado.status}"/>
+
+			<div align="center">
+
+			<h:panelGroup>
+			
+			
+		<p:commandButton value="Inserir" ajax="false"
+		style="color:blue; background-color:#CCEEFF" size="100"
+		name="cmd" action="${boletimProfessorMB.inserirDadoUnico()}" />
+
+		<p:commandButton value="Pesquisar" ajax="false"
+		style="color:blue; background-color:#CCEEFF" size="100"
+		name="cmd" action="${boletimProfessorMB.consultar()}" />
+		
+		<p:commandButton value="Alterar" ajax="false"
+		style="color:blue; background-color:#CCEEFF" size="100"
+		name="cmd" action="${boletimProfessorMB.alterar()}" />
+		
+	
+		</h:panelGroup>
+		</div>
+		</p:panelGrid>
+	</p:panel>
+	
+	
+	<p:dataTable value="${boletimProfessorMB.boletimCadastrado}" var="boletim"
+				paginator="true">
+
+				<p:column headerText="RM">${boletim.identificacaoAluno}</p:column>
+				<p:column headerText="Conceito Parcial">${boletim.conceitoParcial}</p:column>
+				<p:column headerText="Conceito Final">${boletim.conceitoFinal}</p:column>
+				<p:column headerText="Faltas Parciais">${boletim.faltasParciais}</p:column>
+				<p:column headerText="Faltas Finais">${boletim.faltasFinais}</p:column>
+				<p:column headerText="Frequência Parcial">${boletim.frequenciaParcial}</p:column>
+				<p:column headerText="Frequência Final">${boletim.frequenciaFinal}</p:column>
+				<p:column headerText="Status">${boletim.status}</p:column>
+
+				<p:column headerText="Opções">
+				<p:commandButton value="Remover" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${boletimProfessorMB.remover(boletim.identificacaoAluno)}" />
+
+
+				</p:column>
+			</p:dataTable>
+
+
+	</h:form>
+	</div>
+
+</h:body>
+</html>

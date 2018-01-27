@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+<h:outputStylesheet name="estiloTelaAberta.css" library="css" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Login Sistema Acadêmico</title>
+</h:head>
+
+<h:body>
+<f:view contentType="text/html">
+
+<div id="corpo">
+
+
+
+<h:form id = "formModeloMental">
+<p:growl id="growl" showDetail="true" sticky="true" />
+
+
+ <p:tabView id="tabView" size="250">  
+  <p:tab title="Bem Vindo ao Sistema de Gestão Acadêmica da Etec-ZL">
+
+
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;" styleClass="fundoPrata"/>
+  
+		</div>
+		
+ <p align="Right">
+<h:commandLink action="${acessoMB.redirecionaTelaPrincipal()}">  Voltar </h:commandLink>  
+</p>
+
+<p:spacer width="20" height="10" />  
+
+
+  <p:mindmap value="#{modeloMentalMB.principal}" size = "1000" style="width: 100%;height: 600px; border: 1px solid black;">
+         <p:ajax event="select" listener="#{modeloMentalMB.onNodeSelect}" />
+        <p:ajax event="dblselect" listener="#{modeloMentalMB.onNodeDblselect}" update="output" oncomplete="PF('details').show();" />
+    </p:mindmap>
+ 
+    <p:dialog widgetVar="details" header="Detalhes" resizable="false" modal="true" showEffect="fade" hideEffect="fade">
+        <h:outputText id="output" value="#{modeloMental.selectedNode.data}" />
+    </p:dialog>
+
+</p:tab>
+</p:tabView>
+</h:form>
+</div>
+</f:view>
+</h:body>
+
+
+
+</html>

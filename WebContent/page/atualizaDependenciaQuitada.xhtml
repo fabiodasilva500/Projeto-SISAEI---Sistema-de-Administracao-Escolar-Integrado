@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Acompanhamento Acadêmico</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+		<h:form id="formAtualizaDependenciaQuitada">
+
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+			  <li><a href="indexProfessor.jsf">Home</a></li>
+			  <li><a href="diarioProfessor.jsf">Diário</a></li>
+			  <li><a href="boletimProfessor.jsf">Entrega de Notas</a></li>
+			  <li><a href="dependencia.jsf">Dependências</a></li>
+			  <li><a href="contatoProfessor.jsf">Contate o estudante</a></li>
+			  <li> <h:commandLink action="#{ajudaMB.manualDoUsuario('professor')}"> Ajuda </h:commandLink>  </li>			  			 
+			  <li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+				    
+				
+				</ul>
+			</div>
+		</div>
+
+
+
+        <p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+		
+
+
+			<p:panel header="Dados do Boletim" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass = "semBorda">
+				
+				   
+<h:outputLabel value="Nome do estudante " />
+<p:selectOneMenu value="#{dependenciaMB.dependenciaAtual.identificacaoAluno}"
+style="width:600px;">
+<f:selectItem itemLabel="" size="100" itemValue="" />
+<f:selectItems value="#{dependenciaMB.listaAlunos}" var="aluno"
+itemLabel="#{aluno.nome}" itemValue="#{aluno.identificacao}" />
+<p:ajax update="txtNota" event="valueChange"
+listener="${dependenciaMB.localizaDependenciaQuitada()}" />
+</p:selectOneMenu>
+		   
+
+<h:outputText value="Atividades Desenvolvidas" />
+<p:inputTextarea rows="4" cols="100" value="#{dependenciaMB.dependenciaAtual.atividade}" queryDelay="750" minQueryLength="4"  disabled = "true"/> 
+
+		   <h:outputText value="Menção" />
+		   <p:selectOneMenu id="txtNota" value="${dependenciaMB.dependenciaAtual.mencao}" style="width:70px;"
+		    disabled = "true">
+					    
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="MB" itemLabel="MB" />
+						<f:selectItem itemValue="B" itemLabel="B" />
+						<f:selectItem itemValue="R" itemLabel="R" />
+						<f:selectItem itemValue="I" itemLabel="I" />
+		   </p:selectOneMenu>
+		 
+		 
+
+			<div align="center">
+
+<center>
+			<h:panelGroup>
+			
+			
+		<p:commandButton value="Remover" ajax="false"
+		style="color:blue; background-color:#CCEEFF" size="100"
+		name="cmd" action="${dependenciaMB.remover()}" />
+	
+	   <p:commandButton value="Pesquisar nova menção cadastrada" ajax="false"
+		style="color:blue; background-color:#CCEEFF" size="100"
+		name="cmd" action="${dependenciaMB.consultarNovaMencao()}" />
+		
+			
+		</h:panelGroup>
+	</center>
+		 
+		</div>
+		</p:panelGrid>
+	</p:panel>
+	
+	
+			<p:dataTable value="${dependenciaMB.dependenciaLocalizada}" var="dependencia"
+				paginator="true">
+
+
+				<p:column headerText="Identificação do estudante">${dependencia.identificacaoAluno}</p:column>
+				<p:column headerText="Menção">${dependencia.mencao}</p:column>
+				<p:column headerText="Atividade">${dependencia.atividade}</p:column>
+					
+	
+			</p:dataTable>
+	
+
+
+	</h:form>
+	</div>
+
+</h:body>
+</html>

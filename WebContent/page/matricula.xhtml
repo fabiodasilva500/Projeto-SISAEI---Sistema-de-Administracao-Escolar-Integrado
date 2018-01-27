@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Inserção de Estudantes em turmas</title>
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+				style="width: 539px; height: 91px;" />
+
+		</div>
+
+
+		<h:form id="formAlunoTurmas">
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+					<li><a href="index.jsf">Home</a></li>
+					<li><a href="aluno.jsf">Aluno</a></li>
+					<li><a href="turma.jsf">Turma</a></li>
+					<li><a href="professor.jsf">Professor</a> </li>
+					<li><a href="boletim.jsf">Boletim</a></li>
+					<li><a href="matricula.jsf">Matrículas</a></li>
+					<li><a href="trancamento.jsf">Trancamento</a></li>
+					<li><a href="escolheDeclaracao.jsf">Declarações</a></li>
+					<li> <h:commandLink action="#{ajudaMB.manualDoUsuario('secretaria')}"> Ajuda </h:commandLink>  </li>
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+			
+				
+
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+			
+
+			<p:panel header="Dados da Matrícula" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass="semBorda">
+
+	                    <h:outputText value="RM"
+						style="color:blue; background-color:80BFFF" />
+					<p:inputText id="txtIdentificacao" maxlength="8" 
+						value="${matriculaMB.matriculaAtual.identificacao}" />
+
+					<h:outputText value="Semestre" />
+					<p:selectOneMenu id="txtSemestre"
+						value="${matriculaMB.selecaoSemestre}">
+						<f:selectItem itemValue="" itemLabel="" />
+						<f:selectItem itemValue="1" itemLabel="1º" />
+						<f:selectItem itemValue="2" itemLabel="2º" />
+						<p:ajax update="txtAno txtCurso txtTurma" event="valueChange"
+							listener="${matriculaMB.listaAnos()}" />
+					</p:selectOneMenu>
+
+					<h:outputText value="Ano" />
+					<p:selectOneMenu id="txtAno" value="#{matriculaMB.selecaoAno}"
+						style="width:600px;" disabled="#{matriculaMB.desabilitaAno}">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{matriculaMB.listaAnos()}" var="anos"
+							itemLabel="#{anos}" itemValue="#{anos}" />
+						<p:ajax update="txtAno txtCurso txtTurma" event="valueChange" />
+					</p:selectOneMenu>
+
+
+					<h:outputLabel value="Curso " />
+					<p:selectOneMenu id="txtCurso" value="#{matriculaMB.selecaoCurso}"
+						style="width:600px;" disabled="#{matriculaMB.desabilitaCurso}">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{matriculaMB.listaCursos()}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+						<p:ajax update="txtCurso txtTurma" event="valueChange"
+							listener="${matriculaMB.listaCursos()}" />
+					</p:selectOneMenu>
+
+
+
+					<h:outputLabel value="Turma " />
+					<p:selectOneMenu id="txtTurma"
+						value="#{matriculaMB.matriculaAtual.IDTurma}"
+						style="width:600px;" disabled="#{matriculaMB.desabilitaTurma}">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{matriculaMB.listaTurmas()}" var="turma"
+							itemLabel="#{turma.nome}" itemValue="#{turma.IDTurma}" />
+						<p:ajax update="txtTurma" event="valueChange"
+							listener="${matriculaMB.listaTurmas()}" />
+					</p:selectOneMenu>
+
+
+				
+
+				
+					<p:hotkey bind="enter"
+						actionListener="#{matriculaMB.consultarNome()}" />
+
+	</p:panelGrid>
+
+	
+	
+	       <h:panelGrid columns="2">
+           <p:selectOneRadio value="${matriculaMB.habilitaDependencias}">
+           <f:selectItem itemValue="false" itemLabel="Aluno já matriculado na instituição"/> 
+		   <f:selectItem itemValue="true" itemLabel="Aluno transferido"/>
+		   <p:ajax update="panel" event="change"/>    
+		   </p:selectOneRadio>			
+		</h:panelGrid>
+			
+
+<p:outputPanel id="panel">
+<p:panel id="panelA" rendered="#{matriculaMB.habilitaDependencias}">   
+ 
+<h:outputText value = "Instituição de Ensino  &#160; &#160; " id="instituicao"/>
+
+<p:inputText value="${matriculaMB.matriculaAtual.instituicao}"
+id="txtInstituicao" maxlength="100" size = "100"/> <br> </br>
+
+
+
+<h:outputText value = "Razão &#160; &#160; &#160;   &#160; &#160; &#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" 
+id="razao"/>
+<p:inputText value="${matriculaMB.matriculaAtual.razao}"
+id="txtRazao" maxlength="100" size="100" />
+
+<br> </br>
+<h:outputText value = "Dependências  &#160; &#160; &#160;" id="dependencias"/>
+
+<p:inputText value="${matriculaMB.matriculaAtual.dependencias}"
+id="txtDependencias" maxlength="8" size = "8"/>
+
+<h:outputText value = " &#160; &#160; &#160; Total de dependências  &#160; &#160; &#160;" id="totalDependencias"/>
+
+<p:inputText value="${matriculaMB.matriculaAtual.totalDependencias}"
+id="txtTotalDependencias" maxlength="8" />
+
+
+</p:panel>
+</p:outputPanel>
+
+
+						<h:panelGroup>
+
+
+<center>
+							<p:commandButton value="Inserir" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${matriculaMB.inserir()}" />
+							<p:commandButton value="Pesquisar" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${matriculaMB.pesquisar()}" />
+							<p:commandButton value="Remover" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${matriculaMB.remover()}" />
+ </center>
+						</h:panelGroup>
+					
+					</p:panel>
+   
+			<p:dataTable value="${matriculaMB.listaAt}" var="matricula"
+				paginator="true">
+				<p:column headerText="ID Turma">${matricula.IDTurma}</p:column>
+				<p:column headerText="RM">${matricula.identificacao}</p:column>
+			</p:dataTable>
+
+
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<h:outputStylesheet name="estilo.css" library="css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Manutenção do Cadastro de Turmas</title>
+	<h:outputScript name="calendario.js" library="js" />  
+</h:head>
+
+<h:body>
+	<div id="corpo">
+		<div id="topo">
+
+	<h:graphicImage value="/resources/imagens/novo_logo.png" 
+	style="width: 539px; height: 91px;"/>
+
+		</div>
+
+		<h:form id="formTurmas">
+
+
+		<div id="sse50">
+			<div id="sses50">
+				<ul>
+
+				<li><a href="index.jsf">Home</a></li>
+					<li><a href="aluno.jsf">Aluno</a></li>
+					<li><a href="turma.jsf">Turma</a></li>
+					<li><a href="professor.jsf">Professor</a> </li>
+					<li><a href="boletim.jsf">Boletim</a></li>
+					<li><a href="matricula.jsf">Matrículas</a></li>
+					<li><a href="trancamento.jsf">Trancamento</a></li>
+					<li><a href="escolheDeclaracao.jsf">Declarações</a></li>
+					<li> <h:commandLink action="#{ajudaMB.manualDoUsuario('secretaria')}"> Ajuda </h:commandLink>  </li>
+					<li> <h:commandLink action="#{acessoMB.finalizarSessao()}">  Finalizar Sessão </h:commandLink>  </li>
+			
+				</ul>
+			</div>
+		</div>
+
+
+
+<p:growl id="mensagem" showDetail="true" sticky="true" />  
+
+
+			<p:panel header="Turmas" style="margin-bottom:10px;">
+				<p:panelGrid columns="2" styleClass="semBorda"> 
+
+
+					<h:outputText value="ID da Turma"
+						style="color:blue; background-color:80BFFF" />
+					<p:inputText value="${turmaMB.turmaAtual.IDTurma}" id="txtIDTurma" disabled="true"
+						maxlength="10"
+						validatorMessage="A turma deve conter no máximo 10 números"> 
+					</p:inputText>
+					
+<h:outputText value = "Módulo do Curso" />
+<p:selectOneMenu id="txtModulo" value="${turmaMB.turmaAtual.modulo}" >
+      <f:selectItem itemValue="1" itemLabel="1º"/>  
+      <f:selectItem itemValue="2" itemLabel="2º"/>  
+      <f:selectItem itemValue="3" itemLabel="3º"/>  
+ </p:selectOneMenu>  
+	
+				
+                   <h:outputText value="Nome" />
+					<p:inputText id="txtNome" maxlength="100" size="100"
+					 value="#{turmaMB.turmaAtual.nome}"> 					 	
+					 <p:ajax update="txtIDTurma" event="valueChange"
+							listener="${turmaMB.localizaIDTurma()}" />
+			        </p:inputText>
+			
+		
+                    <h:outputText value = "Semestre" />
+                    <p:selectOneMenu id="txtSemestre" value="${turmaMB.turmaAtual.semestre}" >
+                    <f:selectItem itemValue="1" itemLabel="1º"/>  
+                    <f:selectItem itemValue="2" itemLabel="2º"/> 
+                    <p:ajax update="txtAno" event="valueChange"
+							listener="${turmaMB.listaAnos()}" /> 
+                    </p:selectOneMenu>  
+		
+	                 <h:outputText value="Ano" />
+					<p:selectOneMenu id="txtAno" value="#{turmaMB.turmaAtual.ano}"
+						style="width:80px;" >
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItems value="#{turmaMB.listaAnos()}" var="anos"
+							itemLabel="#{anos}" itemValue="#{anos}" />
+					</p:selectOneMenu>
+
+
+	                 <h:outputText value="Período" />
+					<p:selectOneMenu id="txtPeriodo" value="#{turmaMB.turmaAtual.periodo}"
+						style="width:120px;" >
+						<f:selectItem itemLabel="Matutino" itemValue="Matutino" />
+						<f:selectItem itemLabel="Vespertino" itemValue="Vespertino" />
+						<f:selectItem itemLabel="Noturno" itemValue="Noturno" />	
+					</p:selectOneMenu>
+
+					<h:outputText value="Aulas Totais" />
+					<p:inputText id="txtAulasTotais" maxlength="9" size="6"
+					value="${turmaMB.turmaAtual.aulas_totais}" />
+								
+					<h:outputLabel for="curso" value="Curso " />
+					<p:selectOneMenu value="#{turmaMB.turmaAtual.curso}"
+						style="width:600px;">
+						<f:selectItem itemLabel="" size="100" itemValue="" />
+						<f:selectItems value="#{turmaMB.listaCursos()}" var="curso"
+							itemLabel="#{curso.nome}" itemValue="#{curso.id}" />
+ 					</p:selectOneMenu>
+
+					
+					
+					<h:outputText value="Sala" />
+					<p:inputText id="txtSala" maxlength="15" size="15"
+						value="${turmaMB.turmaAtual.sala}" />
+
+
+					<h:outputText value="Descrição" />
+					<p:inputText id="txtDescricao" maxlength="100" size="100"
+						value="${turmaMB.turmaAtual.descricao}" />
+
+
+					<h:outputLabel value="Data do conselho de classe" />
+
+					<p:calendar pattern="dd/MM/yyyy"
+						id="txtDataConselho" value="${turmaMB.turmaAtual.data_conselho}" />
+
+
+					<h:outputText value="Perfil" />
+					<p:inputText id="txtPerfil" maxlength="100" size="100"
+						value="${turmaMB.turmaAtual.perfil}" />
+
+					<div align="center">
+
+						<h:panelGroup>
+
+
+
+							<p:commandButton value="Inserir" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${turmaMB.inserir()}" />
+							<p:commandButton value="Pesquisar" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${turmaMB.pesquisar()}" />
+						
+								
+								<p:commandButton value="Gerar Lista de Estudantes" ajax="false"
+								style="color:blue; background-color:#CCEEFF" size="100"
+								name="cmd" action="${matriculaMB.gerarLista(turmaMB.turmaAtual.IDTurma)}" />
+
+
+						</h:panelGroup>
+					</div>
+				</p:panelGrid>
+			</p:panel>
+
+
+			<p:dataTable value="${turmaMB.turmaAtual}" var="turma"
+				paginator="true">
+
+
+				<p:column headerText="ID Turma">${turma.preparaIDTurma}</p:column>
+				<p:column headerText="Nome">${turma.nome}</p:column>
+				<p:column headerText="Ano">${turma.ano}</p:column>
+				<p:column headerText="Semestre">${turma.semestre}</p:column>
+				<p:column headerText="Período">${turma.periodo}</p:column>
+				<p:column headerText="Módulo">${turma.modulo}</p:column>
+				<p:column headerText="Curso">${turma.curso}</p:column>
+				<p:column headerText="Aulas Totais">${turma.aulas_totais}</p:column>
+				<p:column headerText="Data do conselho">${turma.preparaData}</p:column>
+
+
+				<p:column headerText="Opções">
+					<p:commandButton value="Atualizar" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${turmaMB.atualizar()}" />
+					<p:commandButton value="Remover" ajax="false"
+						style="color:blue; background-color:#CCEEFF" size="100" name="cmd"
+						action="${turmaMB.remover()}" />
+
+
+				</p:column>
+			</p:dataTable>
+
+		</h:form>
+	</div>
+
+</h:body>
+</html>
