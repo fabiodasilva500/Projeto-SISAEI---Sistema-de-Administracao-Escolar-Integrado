@@ -178,6 +178,8 @@ private Acesso acesso;
              || httpReq.getRequestURL().toString().contains("localizaVagas.jsf")
      	     || httpReq.getRequestURL().toString().contains("recuperaSenha.jsf")
              || httpReq.getRequestURL().toString().contains("alterarEmailSenha.jsf")
+     	     || httpReq.getRequestURL().toString().contains("areaConcentracao.jsf")
+     	     || httpReq.getRequestURL().toString().contains("estatisticaInstituicao.jsf")
      	     || httpReq.getRequestURL().toString().contains("acesso.jsf")
              || httpReq.getRequestURL().toString().contains("invalidaAcesso.jsf")){
     	     chain.doFilter(request, response);  
